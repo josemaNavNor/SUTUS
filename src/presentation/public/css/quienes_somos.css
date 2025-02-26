@@ -1,0 +1,276 @@
+.nav-pills .nav-link.active{
+    background-color: #91929F;
+    color: #D3F6C4;
+}
+.nav-pills .nav-link:hover{
+    color: #3D3D3D;
+}
+.navbar-toggler {
+    border: none; /* Eliminar borde del botón de toggler */
+}
+.dropdown-menu {
+    padding: 0; /* Eliminar el padding */
+    border-radius: 0.5rem; /* Bordes redondeados del contenedor */
+}
+.dropdown-item {
+    padding: 0.5rem 1rem; /* Añadir padding a los elementos para que sean clicables */
+}
+.dropdown-item:not(:last-child) {
+    border-bottom: 1px solid transparent; /* Añadir un borde inferior si deseas separar los elementos */
+}  
+
+.menuRedondoP:first-child:hover {
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+}
+
+.menuRedondoU:last-child:hover{
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+}
+
+.dropdown-menu a:active{
+    background-color: #E78446;
+}
+
+.iconFlechaAbj{
+    width: 15px;
+    height: 15px;
+}
+.col{
+    margin: 0;
+    padding: 0;
+}
+.colContenido{
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+.numGrande{
+font-size: 25px;
+}
+.txtGrande{
+font-size: 25px;
+font-weight: bold;
+}
+
+.photo-gallery{
+    height: 70px;
+    width: 70px;
+    overflow: hidden;
+}
+.imginfo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* .timeline {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin-top: 30px;
+}
+
+.timeline-arrow {
+    display: inline-block;
+    padding: 10px 15px;
+    margin: 0 5px;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    background-color: transparent;
+    color: #007bff;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.timeline-arrow::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    margin-left: 5px;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 10px solid #007bff;
+}
+
+.timeline-arrow.active {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+} */
+
+.carousel-item {
+    padding: 20px;
+}
+
+.lineaSeccCont{
+    height: 5px;
+    flex-grow: 1;
+    background-color: rgb(78, 78, 78);
+}
+
+.process-wrapper{
+    /* margin: 50px auto;
+    width: 80vw; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+input{
+    display: none;
+    position: absolute;
+}
+.header-progress-bar{
+    /* position: relative;
+    width: 90%;
+    margin: auto;
+    height: 100%;
+    margin: 60px;
+     */
+    width: 90%;
+    margin: auto;
+    height: auto;
+    padding: 20px 0;
+    animation: trans .7s linear forwards;
+}
+.nav-progress-bar{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    position: relative;
+}
+
+/* ul.nav-progress-bar{
+    padding-top: 15px;
+    z-index: 100;
+    position: absolute;
+    width: 100%;
+    margin-top: -40px;
+} */
+
+.nav-progress-bar li{
+    list-style: none;
+    float: left;
+    width: 10%;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all .3s ease;
+    vertical-align: middle;
+    height: 13px;
+    flex: 1;
+    text-align: center;
+    position: relative;
+    z-index: 3;
+}
+
+.nav-progress-bar li::before{
+    content: "";
+    width: 25px;
+    height: 25px;
+    border: 2px solid #aaa;
+    border-radius: 50%;
+    margin: auto;
+    display: block;
+    transition: all .5s ease;
+}
+
+.nav-progress-bar li:hover::before{
+    border: 2px solid #fff;
+    background: linear-gradient(#35835b 0%, #28965d 100%);
+}
+
+.nav-progress-bar li .inner{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+
+.nav-progress-bar li.active,
+.nav-progress-bar li:hover{
+    color: #1F7A4B;
+}
+
+.nav-progress-bar li::after{
+    content: "";
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: #777;
+    border-radius: 50%;
+    margin: auto;
+    border: 7px solid #fff;
+    margin-top: 13px;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, .2);
+}
+
+.nav-progress-bar li:hover::after,
+.nav-progress-bar li.active::after{
+    background: #28965d;
+}
+
+.line{
+    width: 80%;
+    margin: 0 auto;
+    background: #eee;
+    height: 7px;
+    position: relative;
+    /* left: 8%;
+    top: 20px;
+    z-index: 1; */
+    border-radius: 50px;
+}
+.line span{
+    content: "";
+    width: 25%;
+    height: 100%;
+    background-image: linear-gradient(#11e8b2 0%, #28965d 100%);
+    position: absolute;
+    z-index: 2;
+    border-radius: 50px;
+    transition: all .5s ease;
+}
+
+.year1:checked ~ .header-progress-bar .nav-progress-bar li.st1::before,
+
+.year2:checked ~ .header-progress-bar .nav-progress-bar li.st1::before,
+.year2:checked ~ .header-progress-bar .nav-progress-bar li.st2::before,
+
+.year3:checked ~ .header-progress-bar .nav-progress-bar li.st1::before,
+.year3:checked ~ .header-progress-bar .nav-progress-bar li.st2::before,
+.year3:checked ~ .header-progress-bar .nav-progress-bar li.st3::before,
+
+.year4:checked ~ .header-progress-bar .nav-progress-bar li.st1::before,
+.year4:checked ~ .header-progress-bar .nav-progress-bar li.st2::before,
+.year4:checked ~ .header-progress-bar .nav-progress-bar li.st3::before,
+.year4:checked ~ .header-progress-bar .nav-progress-bar li.st4::before{
+    border: 2px solid #fff;
+    background: linear-gradient(#35835b 0%, #28965d 100%);
+    transition: all .5s ease;
+}
+
+.year2:checked ~ .header-progress-bar .line span{
+    width: 35%;
+}
+
+.year3:checked ~ .header-progress-bar .line span{
+    width: 68%;
+}
+
+.year4:checked ~ .header-progress-bar .line span{
+    width: 100%;
+}
+
+.carousel.slide .carousel-indicators [data-bs-target] {
+    background-color: #91929F; /* Color normal */
+    border-radius: 50%; /* Hacerlos circulares */
+    width: 12px; /* Ajustar el tamaño */
+    height: 12px; /* Ajustar el tamaño */
+}
+.carousel.slide .carousel-indicators .active {
+    background-color: #1F7A4B; /* Color activo */
+}
+

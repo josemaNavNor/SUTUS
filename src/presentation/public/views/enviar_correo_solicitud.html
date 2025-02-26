@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enviar correo</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/bootstrap.scss">
+    <link rel="stylesheet" href="/css/panel_control.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <nav id="sidebar" class="bg-success text-white p-3 col-md-3 col-lg-2 d-md-block">
+                <div class="sidebar-header">
+                    <i class="fas fa-user-circle fa-2x"></i>
+                    <h3>Mi Sidebar</h3>
+                </div>
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#" id="homeLink">
+                            <i class="fas fa-users me-2"></i>Inicio
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#" data-bs-toggle="collapse" data-bs-target="#personalSubmenu" aria-expanded="false" aria-controls="personalSubmenu">
+                            <i class="fas fa-users me-2"></i>Personal
+                        </a>
+                        <div class="collapse" id="personalSubmenu">
+                            <ul class="nav flex-column ms-3">
+                                <li class="nav-item">
+                                    <a class="nav-link text-white" href="añadir_empleado.html" id="addEmployeeLink">Añadir Empleado</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-white" href="#">Añadir rol al Empleado</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-white" href="#">Añadir empleado al comite</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#" data-bs-toggle="collapse" data-bs-target="#PrestacionesSubmenu" aria-expanded="false" aria-controls="PrestacionesSubmenu">
+                            <i class="fas fa-users me-2"></i>Prestaciones
+                        </a>
+                        <div class="collapse" id="PrestacionesSubmenu">
+                            <ul class="nav flex-column ms-3">
+                                <li class="nav-item">
+                                    <a class="nav-link text-white" href="#">Añadir prestacion</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#" data-bs-toggle="collapse" data-bs-target="#DepartamentosSubmenu" aria-expanded="false" aria-controls="DepartamentosSubmenu">
+                            <i class="fas fa-users me-2"></i>Departamentos
+                        </a>
+                        <div class="collapse" id="DepartamentosSubmenu">
+                            <ul class="nav flex-column ms-3">
+                                <li class="nav-item">
+                                    <a class="nav-link text-white" href="#">Crear departamento</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Main Content -->
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2">Formulario de Correo</h1>
+                </div>
+
+                <form id="emailForm">
+                    <div class="form-group mb-4">
+                        <label for="autor" class="form-label">Personalizar nombre:</label>
+                        <input type="text" class="form-control" id="autor" placeholder="Autor(es)">
+                    </div>
+                    <div class="form-group mb-4">
+                        <label for="asunto" class="form-label">Asunto personalizado:</label>
+                        <input type="text" class="form-control" id="asunto" placeholder="Solicitud de...">
+                    </div>
+                    <div class="form-group mb-4">
+                        <label for="comentario" class="form-label">Comentario personalizado:</label>
+                        <textarea class="form-control" id="comentario" rows="5"></textarea>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <button type="button" class="btn btn-success" onclick="enviarCorreo()">Enviar correo</button>
+                    </div>
+                </form>
+            </main>
+        </div>
+    </div>
+    <script src="/Sindicato-Sutus-PaginaWeb/node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>

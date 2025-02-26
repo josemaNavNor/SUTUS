@@ -1,0 +1,169 @@
+.carousel.slide .carousel-indicators [data-bs-target] {
+    background-color: #91929F; /* Color normal */
+    border-radius: 50%; /* Hacerlos circulares */
+    width: 12px; /* Ajustar el tamaño */
+    height: 12px; /* Ajustar el tamaño */
+}
+.carousel.slide .carousel-indicators .active {
+    background-color: #1F7A4B; /* Color activo */
+}
+
+.listheader{
+    background-color: #1F7A4B;
+    color: white;
+    text-align: center;
+    font-size: 25px;
+}
+.list-group-item-action:hover{
+    color: #1F7A4B;
+}
+.imginfo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carouselPrincipal img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carouselPrincipal .carousel-item{
+    position: relative;
+}
+
+.carouselPrincipal .shadow-inner::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.carouselPrincipal .carousel-caption{
+    z-index: 2;
+}
+
+
+@media (max-width: 768px) {
+    .carousel-image-size {
+        height: 250px;
+        /* Ajusta la altura a 250px en pantallas más pequeñas */
+    }
+    .carouselPrincipal p{
+        transform: translateY(80%);
+        margin: 0;
+        padding: 0;
+    }
+    .carouselPrincipal h1{
+        transform: translateY(140%);
+        margin: 0;
+        padding: 0;
+    }
+}
+
+@media (max-width: 643px){
+    .carouselPrincipal p{
+        transform: translateY(80%);
+        margin: 0;
+        padding: 0;
+    }
+    .carouselPrincipal h1{
+        transform: translateY(130%);
+        margin: 0;
+        padding: 0;
+    }
+    .carouselPrincipal p{
+        font-size: 25px;
+    }
+}
+  
+@media (max-width: 576px) {
+    .carousel-image-size {
+        height: 200px;
+        /* Ajusta la altura aún más en pantallas muy pequeñas */
+    }
+    .carouselPrincipal p{
+        font-size: 18px;
+    }
+    .carouselPrincipal p{
+        transform: translateY(80%);
+        margin: 0;
+        padding: 0;
+    }
+    .carouselPrincipal h1{
+        transform: translateY(90%);
+        margin: 0;
+        padding: 0;
+    }
+}
+
+@media (max-width: 388px){
+    .carouselPrincipal p{
+        font-size: 14px;
+    }
+    .carouselPrincipal p{
+        transform: translateY(80%);
+        margin: 0;
+        padding: 0;
+    }
+    .carouselPrincipal h1{
+        transform: translateY(90%);
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.card-Noticias {
+    margin: 0 15px;
+}
+
+.imagenNoticias {
+    width: 100%; /* Hace que la imagen ocupe todo el ancho de la tarjeta */
+    height: 200px; /* Ajusta la altura de las imágenes */
+    object-fit: cover; /* Hace que la imagen no se distorsione */
+}
+
+@media (max-width: 767px) {
+    /* Para pantallas muy pequeñas, por ejemplo, móviles */
+    .card-Noticias {
+        width: 96%; /* Las tarjetas ocupan todo el ancho disponible */
+        margin-bottom: 15px;
+    }
+}
+
+.imagenCelebraciones {
+    width: 100%;
+    height: 270px;
+    object-fit: cover;
+}
+
+@media (min-width: 768px) and (max-width: 882px) {
+    .imagenCelebraciones {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+}
+
+.card-Celebraciones {
+    width: 319px;
+    height: 460px;
+    margin: 0 15px;
+}
+
+.container-secondary{
+    background-color: rgba(31, 122, 75, 0.26);
+}
+
+.card-celebrations{
+    background-color: rgba(233, 230, 230, 0.82);
+}
+
+
+
+

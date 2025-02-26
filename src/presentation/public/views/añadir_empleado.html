@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Añadir Empleado</title>
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/bootstrap.scss">
+  <link rel="stylesheet" href="/css/componentes.css">
+</head>
+<body>
+      <div class="container-fluid">
+        <div class="Row">
+            <div class="col-12 d-flex align-items-center justify-content-start ps-3">
+                <a href="/views/panel_de_control.html" class="text-decoration-none">
+                  <img src="/img/icons-flecha-volver.png"
+                    class="rotate-180" alt="flecha_volver">
+                </a>
+              </div>
+        </div>
+      </div>
+    <div class="container mt-5">
+        <div class="col-12 d-flex align-items-center pt-4 pb-4">
+            <h1 class="fs-3 fs-md-1">Añadir Empleado</h1>
+            <hr class="lineaSeccCont ms-3">
+        </div>
+        <form id="employeeForm" class="row g-3">
+            <div class="col-md-6">
+                <label for="nombre" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="nombre" name="nombre" required>
+            </div>
+            <div class="col-md-6">
+                <label for="primerApellido" class="form-label">Primer Apellido</label>
+                <input type="text" class="form-control" id="primerApellido" name="primer_apellido" required>
+            </div>
+            <div class="col-md-6">
+                <label for="segundoApellido" class="form-label">Segundo Apellido</label>
+                <input type="text" class="form-control" id="segundoApellido" name="segundo_apellido" required>
+            </div>
+            <div class="col-md-6">
+                <label for="curp" class="form-label">CURP</label>
+                <input type="text" class="form-control" id="curp" name="curp" required>
+            </div>
+            <div class="col-md-6">
+                <label for="empresa" class="form-label">Empresa o Patrón</label>
+                <input type="text" class="form-control" id="empresa" name="entidad" required>
+            </div>
+            <div class="col-md-6">
+                <label for="domicilioTrabajador" class="form-label">Domicilio</label>
+                <input type="text" class="form-control" id="domicilioTrabajador" name="domicilio" required>
+            </div>
+            <div class="col-md-6">
+                <label for="domicilioEmpresa" class="form-label">Domicilio de la Empresa</label>
+                <input type="text" class="form-control" id="domicilioEmpresa" name="domicilio_empresa" required>
+            </div>
+            <div class="col-md-6">
+                <label for="correo" class="form-label">Correo</label>
+                <input type="email" class="form-control" id="correo" name="correo" required>
+            </div>
+            <div class="col-md-6">
+                <label for="contrasena" class="form-label">Contraseña</label>
+                <input type="password" class="form-control"  id="contrasena" name="password" required>
+            </div>
+            <div class="col-md-6">
+                <label for="fechaIngresoEmpresa" class="form-label">Fecha de Ingreso a la Empresa</label>
+                <input type="date" class="form-control" id="fechaIngresoEmpresa" name="fecha_ingreso_empresa" required>
+            </div>
+            <div class="col-md-6">
+                <label for="fechaIngresoSindicato" class="form-label">Fecha de Ingreso al Sindicato</label>
+                <input type="date" class="form-control"  id="fechaIngresoSindicato" name="fecha_ingreso_sindicato" required>
+            </div>
+            <div class="col-md-6">
+                <label for="estado" class="form-label">Estado</label>
+                <input type="text" class="form-control" id="estado" name="estado" required>
+            </div>
+            <div class="col-md-6">
+                <label for="dependientes" class="form-label">Dependientes</label>
+                <input type="text" class="form-control"  id="dependientes" name="dependientes" required>
+            </div>
+            <div class="col-md-6">
+                <label for="fechaNacimiento" class="form-label">Fecha de Nacimiento</label>
+                <input type="date" class="form-control"id="fechaNacimiento" name="fecha_nacimiento" required>
+            </div>
+            <div class="col-md-6">
+                <label for="puesto" class="form-label">Puesto</label>
+                <input type="text" class="form-control" id="puesto" name="puesto" required>
+            </div>
+            <div class="col-md-6">
+                <label for="nivelTabular" class="form-label">Nivel Tabular</label>
+                <input type="text" class="form-control" id="nivelTabular" name="nivel_tabular" required>
+            </div>
+            <div class="col-md-6">
+                <label for="dedicacion" class="form-label">Dedicación</label>
+                <input type="text" class="form-control" id="dedicacion" name="dedicacion" required>
+            </div>
+            <div class="col-12">
+                <button type="submit" class="btn btn-primary">Añadir Empleado</button>
+            </div>
+        </form>
+    </div>
+    <script src="/js/bootstrap.bundle.js"></script>
+    <script src="/js/crearUsuario.js"></script>
+</body>
+</html>

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/bootstrap.scss">
+    <link rel="stylesheet" href="/css/componentes.css">
+    <link rel="stylesheet" href="/css/servicios.css">
+    <title>Document</title>
+</head>
+<body>
+    <header class="fluid-container"></header>
+    <nav class="navbar navbar-expand-md fluid-container">
+        <div class="container-fluid">
+            <a class="navbar-brand me-auto pb-3" href="/views/home.html">
+                <img src="/img/SUTUS20.png" alt="LogoSutus" width="150"
+                    height="90">
+            </a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto d-flex flex-wrap justify-content-md-center">
+                    <li class="nav-item">
+                        <a class="nav-link"
+                            href="/views/home.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page"
+                            href="/views/quienes_somos.html">¿Quienes somos?</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">Organización</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item menuRedondoP"
+                                    href="/views/comite_ejecutivo.html">Comité
+                                    ejecutivo</a></li>
+                            <li><a class="dropdown-item menuRedondoU" href="#">Comité de vigilancia, honor y
+                                    justicia</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">Normatividad</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item menuRedondoP"
+                                    href="/views/contrato_colectivo_de_trabajo.html">Contrato
+                                    colectivo del trabajo</a></li>
+                            <li><a class="dropdown-item" href="#">Ley federal del trabajo</a></li>
+                            <li><a class="dropdown-item" href="#">Estatuto del sindicato</a></li>
+                            <li><a class="dropdown-item menuRedondoU" href="#">Código de ética</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">Documentos</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item menuRedondoP"
+                                    href="/views/padronAgremiados.html">Padrón de
+                                    agremiados</a></li>
+                            <li><a class="dropdown-item"
+                                    href="/views/convocatorias.html">Convocatorias</a>
+                            </li>
+                            <li><a class="dropdown-item menuRedondoU"
+                                    href="/views/formatos.html">Formatos</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active"
+                            href="/views/servicios.html">Servicios</a>
+                    </li>
+                    <li class="nav-item" id="adminPanel">
+                        <a class="nav-link" href="/views/panel_de_control.html">Panel de control</a>
+                    </li>
+                    <li class="nav-item" id="solicitudes">
+                        <a class="nav-link" href="/views/actualizar_solicitud.html">Mis solicitudes</a>
+                    </li>
+                </ul>
+            </div>
+            <button id="loginButton" class="btn btn-secondary" type="button">Ingresar</button>
+            <button id="logoutButton" class="btn btn-danger" type="button">Cerrar Sesión</button>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col bg-success d-flex align-items-center justify-content-end p-3">
+                <p class="text-light m-0">Servicios</p>
+                <img src="/img/icon-flecha-apuntando-hacia-abajo.png" class="ms-1 iconFlechaAbj" alt="">
+            </div>
+        </div>
+    </div>
+    <main class="container">
+        <div class="row">
+            <div class="col-12 d-flex align-items-center pt-4 pb-md-4 pb-sm-0">
+                <h1>Servicios</h1>
+                <hr class="lineaSeccCont ms-3">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 d-flex justify-content-center">
+                <h2 class="text-center d-none d-md-flex">Todos los servicios al alcance de tu mano</h2>
+                <p class="text-center d-md-none mt-2">Todos los servicios al alcance de tu mano</p>
+            </div>
+            <div class="col-12 d-none d-md-flex justify-content-center flex-wrap pt-3">
+                <button type="button" class="btn btn-primary me-2 mb-2">Todos</button>
+                <button type="button" class="btn btn-primary me-2 mb-2">Prestaciones de seguro</button>
+                <button type="button" class="btn btn-primary me-2 mb-2">Prestación de lentes</button>
+                <button type="button" class="btn btn-primary me-2 mb-2">Prestación de prótesis</button>
+                <button type="button" class="btn btn-primary mb-2">Apoyos</button>
+            </div>
+
+            <div class="col-12 d-md-none">
+                <div id="myCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-touch="true">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active text-center">
+                            <button type="button" class="btn btn-primary me-2 mb-2">Todos</button>
+                            <button type="button" class="btn btn-primary me-2 mb-2">Prestaciones de seguro</button>
+                        </div>
+                        <div class="carousel-item text-center">
+                            <button type="button" class="btn btn-primary me-2 mb-2">Prestación de lentes</button>
+                        </div>
+                        <div class="carousel-item text-center">
+                            <button type="button" class="btn btn-primary me-2 mb-2">Prestación de prótesis</button>
+                            <button type="button" class="btn btn-primary mb-2">Apoyos</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        
+        <div class="row pt-4 pt-md-5">
+            <div class="col-12 col-md-4 d-flex flex-column align-items-center justify-content-center mb-4">
+                <a href="#">
+                    <img src="/img/prestacion-seguro.jpg" alt="" class="imagen-consistente">
+                </a>
+                <p class="text-center text-consistente my-2">Solicita o consulta tus prestaciones del seguro médico</p>
+            </div>
+            <div class="col-12 col-md-4 d-flex flex-column align-items-center justify-content-center mb-4">
+                <a href="/views/formatos.html">
+                    <img src="/img/prestación de protesis.jpg" alt="" class="imagen-consistente">
+                </a>
+                <p class="text-center text-consistente my-2">Tramita tu solicitud para hacer acredor de una prótesis</p>
+            </div>
+            <div class="col-12 col-md-4 d-flex flex-column align-items-center justify-content-center mb-4">
+                <a href="/views/formatos.html">
+                    <img src="/img/prestacion-lentes.jpg" alt="" class="imagen-consistente">
+                </a>
+                <p class="text-center text-consistente">Tramita tu solicitud para hacer acredor de un par de lentes</p>
+            </div>
+            <div class="col-12 col-md-4 d-flex flex-column align-items-center justify-content-center mb-4">
+                <a href="#">
+                    <img src="/img/prestacion-familiar.jpg" alt="" class="imagen-consistente">
+                </a>
+                <p class="text-center text-consistente">Consulta las bases para adquirir tú préstamo familiar</p>
+            </div>
+            <div class="col-12 col-md-4 d-flex flex-column align-items-center justify-content-center mb-4">
+                <a href="#">
+                    <img src="/img/prestacion-guarderia.jpg" alt="" class="imagen-consistente">
+                </a>
+                <p class="text-center text-consistente">Consulta las bases para saber cómo ejercer tu derecho a guardería</p>
+            </div>
+            <div class="col-12 col-md-4 d-flex flex-column align-items-center justify-content-center mb-4">
+                <a href="#">
+                    <img src="/img/prestacion-beca-coleguiatura.avif" alt="" class="imagen-consistente">
+                </a>
+                <p class="text-center text-consistente">Consulta las bases para tramitar tu apoyo en la colegiatura de tus hijos.</p>
+            </div>
+        </div>
+    </main>
+    <footer class="container-fluid text-bg-primary text-center text-lg-start">
+        <div class="row">
+            <div class="col-lg-4 col-md-6 mb-4 ps-5 lineadiv">
+                <div class="pt-4 p-md-5">
+                    <h3 class="fw-bold lineaSelect">Información de contacto</h3>
+                    <p class="p-1">Carr. Moctezuma a Cumpas Km. 2.5 Interior <br>Universidad de la Sierra 84560
+                        Moctezuma, Sonora,
+                        México</p>
+                    <p class="p-1">Teléfono: (+52) 634 3456</p>
+                    <p class="p-1">Correo: <a href="mailto:support@suport.com" class="text-white">support@sutus.com</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-4 text-center lineadiv">
+                <div class="p-0 p-md-5">
+                    <h3 class="fw-bold lineaSelect">Galería de fotos</h3>
+                    <p>Consulta la galería de fotos</p>
+                    <div class="row pt-3">
+                        <div class="offset-3 col-2">
+                            <a href="#">
+                                <img src="/img/ImagenUnisierra1.jpg"
+                                    alt="Foto 1" class="img-fluid" class="">
+                            </a>
+                        </div>
+                        <div class="col-2">
+                            <a href="#">
+                                <img src="/img/ImagenUnisierra2.jpg"
+                                    alt="Foto 2" class="img-fluid" class="">
+                            </a>
+                        </div>
+                        <div class="col-2">
+                            <a href="#">
+                                <img src="/img/ImagenUnisierra3.jpg"
+                                    alt="Foto 3" class="img-fluid" class="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row pt-3">
+                        <div class="offset-3 col-2">
+                            <a href="#">
+                                <img src="/img/ImagenUnisierra4.jpg"
+                                    alt="Foto 4" class="img-fluid" class="">
+                            </a>
+                        </div>
+
+                        <div class="col-2">
+                            <a href="#">
+                                <img src="/img/ImagenUnisierra5.jpg"
+                                    alt="Foto 5" class="img-fluid" class="">
+                            </a>
+                        </div>
+
+                        <div class="col-2">
+                            <a href="#">
+                                <img src="/img/ImagenUnisierra6.jpg"
+                                    alt="Foto 6" class="img-fluid" class="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-12 mb-4">
+                <div class="d-flex justify-content-center">
+                    <h3 class="fw-bold lineaSelect">Ubicanos</h3>
+                </div>
+                <div class="d-flex justify-content-center">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3461.4004419916787!2d-109.67844439999999!3d29.8238611!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjnCsDQ5JzI1LjkiTiAxMDnCsDQwJzQyLjQiVw!5e0!3m2!1ses-419!2smx!4v1730752694377!5m2!1ses-419!2smx"
+                        style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                        class="ubicacion">
+                    </iframe>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+    <div class="container-fluid text-center p-3 text-bg-terciary">
+        <div class="row justify-content-between">
+            <div class="col-3" style="height: 45px;">
+                <div class="d-flex justify-content-center">
+                    <div class="p-2 me-4" style="background-color: #7995AB;"><a
+                            href="https://www.facebook.com/people/Sindicato-%C3%9Anico-de-Trabajadores-de-la-Universidad-de-la-Sierra/61566971434328/"><img
+                                src="/img/iconfacebook.png"
+                                alt=""></a></div>
+                    <div class="p-2 me-4" style="background-color: #7995AB;"><img
+                            src="/img/iconinstagram.png" alt=""></div>
+                    <div class="p-2 me-4" style="background-color: #7995AB;"><img
+                            src="/img/iconx.png" alt=""></div>
+                    <div class="p-2" style="background-color: #7995AB;"><img
+                            src="/img/iconlinkedin.png" alt=""></div>
+                </div>
+            </div>
+            <div class="col-4 d-flex justify-content-center align-items-center" style="height: 45px;">
+                <p class="m-0 text-light">© 2024 Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </div>
+    <script src="/js/bootstrap.bundle.js"></script>
+    <script src="/js/autenticacion.js"></script>
+</body>
+</html>

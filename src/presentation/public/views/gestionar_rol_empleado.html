@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestionar rol usuario</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/bootstrap.scss">
+    <link rel="stylesheet" href="/css/componentes.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="Row">
+            <div class="col-12 d-flex align-items-center justify-content-start ps-3">
+                <a href="/views/panel_de_control.html" class="text-decoration-none">
+                  <img src="/img/icons-flecha-volver.png"
+                    class="rotate-180" alt="flecha_volver">
+                </a>
+              </div>
+        </div>
+      </div>
+    <div class="container mt-5">
+        <div class="col-12 d-flex align-items-center pt-4 pb-4">
+            <h1 class="fs-3 fs-md-1">Añadir rol al usuario</h1>
+            <hr class="lineaSeccCont ms-3">
+        </div>
+        <div class="col-12 d-flex justify-content-around pt-4 pb-4">
+            <div>
+                <select class="form-select" id="selectUser" aria-label="Default select example">
+                    <option selected>Seleccione un empleado</option>
+                </select>
+            </div>
+            <div>
+                <select class="form-select" id="selectRol" aria-label="Default select example">
+                    <option selected>Seleccione un rol</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-12 d-flex justify-content-center pt-4 pb-4">
+            <button type="button" class="btn btn-primary" id="assignRoleButton">Agregar rol al usuario</button>
+        </div>
+    
+        <!-- Espacio de separación -->
+        <div class="col-12 pt-5 pb-5"></div>
+    
+        <div class="col-12 d-flex align-items-center pt-4 pb-4">
+            <h1 class="fs-3 fs-md-1">Añadir Empleado al Comité</h1>
+            <hr class="lineaSeccCont ms-3">
+        </div>
+        <div class="col-12 d-flex justify-content-center pt-4 pb-4">
+            <div class="me-2">
+                <select class="form-select" id="selectEmpleado" aria-label="Default select example">
+                    <option selected>Selecciona un empleado</option>
+                </select>
+            </div>
+            <div class="ms-2">
+                <select class="form-select" id="selectComite" aria-label="Default select example">
+                    <option selected>Selecciona un departamento</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-12 d-flex justify-content-center pt-4 pb-4">
+            <div class="w-50">
+                <label for="puesto" class="form-label">Puesto</label>
+                <input type="text" class="form-control" id="puesto" name="puesto" required>
+            </div>
+        </div>
+        <div class="col-12 d-flex justify-content-center pt-4 pb-4">
+            <button type="button" class="btn btn-primary" id="addToComite">Añadir al comité</button>
+        </div>
+    </div>    
+    <script src="/js/bootstrap.bundle.js"></script>
+    <script src="/js/gestionar_usuario.js"></script>
+</body>
+</html>

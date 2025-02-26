@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel Lateral</title>
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/bootstrap.scss">
+  <link rel="stylesheet" href="/css/panel_control.css">
+</head>
+<body>
+    <div class="d-flex">
+        <nav id="sidebar" class="bg-success text-white p-3">
+            <div class="sidebar-header">
+                <i class="fas fa-user-circle fa-2x"></i> 
+                <h3>Mi Sidebar</h3>
+            </div>
+            <ul class="nav flex-column">
+                <li class="nav-item"> <a class="nav-link text-white" href="/views/home.html" id="homeLink"><i class="fas fa-users me-2"></i>Inicio</a> </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#" data-bs-toggle="collapse" data-bs-target="#personalSubmenu"
+                        aria-expanded="false" aria-controls="personalSubmenu"><i class="fas fa-users me-2"></i>Personal</a>
+                    <div class="collapse" id="personalSubmenu">
+                        <ul class="nav flex-column ms-3">
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="/views/añadir_empleado.html" id="addEmployeeLink">Añadir Empleado</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="/views/gestionar_rol_empleado.html">Gestionar rol del Empleado</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="/views/Modificar_empleado.html">Actualizar empleado</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#" data-bs-toggle="collapse" data-bs-target="#PrestacionesSubmenu"
+                        aria-expanded="false" aria-controls="PrestacionesSubmenu"><i class="fas fa-users me-2"></i>Prestaciones</a>
+                    <div class="collapse" id="PrestacionesSubmenu">
+                        <ul class="nav flex-column ms-3">
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="#">Añadir prestacion</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#" data-bs-toggle="collapse" data-bs-target="#DepartamentosSubmenu"
+                        aria-expanded="false" aria-controls="DepartamentosSubmenu"><i class="fas fa-users me-2"></i>Departamentos</a>
+                    <div class="collapse" id="DepartamentosSubmenu">
+                        <ul class="nav flex-column ms-3">
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="#">Crear departamento</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <div class="content p-4"> 
+            <div class="col-12 d-flex align-items-center pt-4 pb-4">
+                <h1 class="fs-3 fs-md-1">Panel de control</h1>
+                <hr class="lineaSeccCont ms-3">
+            </div>
+            <div class="col-12">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="selectAllRequests">
+                        <label class="form-check-label" for="selectAllRequests">
+                            Seleccionar todas las solicitudes
+                        </label>
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped">
+                        <thead class="table-primary">
+                            <tr><th scope="col" class="text-center align-middle"></th>
+                                <th scope="col" class="text-center align-middle">Empleado</th>
+                                <th scope="col" class="text-center">fecha de solicitud</th>
+                                <th scope="col" class="text-center align-middle">estado</th>
+                                <th scope="col" class="text-center align-middle">tipo de solicitud</th>
+                                <th scope="col" class="text-center align-middle">documento solicitado</th>
+                                <th scope="col" class="text-center align-middle">archivo adicional</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody-content">
+                            <tr>
+                                
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="d-flex justify-content-end mt-3">
+                    <button class="btn btn-success me-2" id="acceptButton" disabled data-bs-toggle="tooltip" data-bs-placement="top" title="Autorizar" onclick="aceptarSeleccionados()">
+                        <img src="/img/icons-done.png" alt="Aceptar">
+                    </button>
+                    <button class="btn btn-danger me-2" id="rejectButton" disabled data-bs-toggle="modal" data-bs-placement="top" title="Rechazar" data-bs-target="#rechazarModal">
+                        <img src="/img/icons-eliminar.png" alt="Rechazar">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div class="modal fade" id="rechazarModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">¿Porque se esta rechazando la solicitud?</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="message-text" class="col-form-label">Message:</label>
+            <textarea class="form-control" id="message-text"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-danger" onclick="rechazarSeleccionados()">Rechazar</button>
+      </div>
+    </div>
+  </div>
+</div>
+    <script src="/js/bootstrap.bundle.js"></script>
+    <script src="/js/paneldeControl.js"></script>
+    <script src="/js/administrar_solicitudes.js"></script>
+</body>
+</html>

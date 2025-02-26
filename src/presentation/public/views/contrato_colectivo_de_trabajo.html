@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/bootstrap.scss">
+    <link rel="stylesheet" href="/css/contratocolectivo.css">
+    <link rel="stylesheet" href="/css/componentes.css">
+    <title>Document</title>
+</head>
+<body>
+    <header class="fluid-container"></header>
+    <nav class="navbar navbar-expand-md fluid-container">
+        <div class="container-fluid">
+            <a class="navbar-brand me-auto pb-3" href="/views/home.html">
+                <img src="/img/SUTUS20.png" alt="LogoSutus" width="150"
+                    height="90">
+            </a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto d-flex flex-wrap justify-content-md-center">
+                    <li class="nav-item">
+                        <a class="nav-link"
+                            href="/views/home.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page"
+                            href="/views/quienes_somos.html">¿Quienes somos?</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">Organización</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item menuRedondoP"
+                                    href="/views/comite_ejecutivo.html">Comité
+                                    ejecutivo</a></li>
+                            <li><a class="dropdown-item menuRedondoU" href="#">Comité de vigilancia, honor y
+                                    justicia</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">Normatividad</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item menuRedondoP"
+                                    href="/views/contrato_colectivo_de_trabajo.html">Contrato
+                                    colectivo del trabajo</a></li>
+                            <li><a class="dropdown-item" href="#">Ley federal del trabajo</a></li>
+                            <li><a class="dropdown-item" href="#">Estatuto del sindicato</a></li>
+                            <li><a class="dropdown-item menuRedondoU" href="#">Código de ética</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">Documentos</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item menuRedondoP"
+                                    href="/views/padronAgremiados.html">Padrón de
+                                    agremiados</a></li>
+                            <li><a class="dropdown-item"
+                                    href="/views/convocatorias.html">Convocatorias</a>
+                            </li>
+                            <li><a class="dropdown-item menuRedondoU"
+                                    href="/views/formatos.html">Formatos</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"
+                            href="/views/servicios.html">Servicios</a>
+                    </li>
+                    <li class="nav-item" id="adminPanel">
+                        <a class="nav-link" href="/views/panel_de_control.html">Panel de control</a>
+                    </li>
+                    <li class="nav-item" id="solicitudes">
+                        <a class="nav-link" href="/views/actualizar_solicitud.html">Mis solicitudes</a>
+                    </li>
+                </ul>
+            </div>
+            <button id="loginButton" class="btn btn-secondary" type="button">Ingresar</button>
+            <button id="logoutButton" class="btn btn-danger" type="button">Cerrar Sesión</button>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col bg-success d-flex align-items-center justify-content-end p-3">
+                <p class="text-light m-0">Contrato colectivo de trabajo</p>
+                <img src="/img/icon-flecha-apuntando-hacia-abajo.png" class="ms-1 iconFlechaAbj" alt="">
+            </div>
+        </div>
+    </div>
+    <main class="container mb-4">
+        <div class="row">
+            <div class="col-12 d-flex align-items-center pt-2 pb-2">
+                <h1>Contrato Colectivo de trabajo</h1>
+                <hr class="lineaSeccCont ms-3">
+            </div>
+            <div class="col-3 border">
+                <div class="list-group">
+                    <li class="list-group-item listheader text-center fs-4">Filtros</li>
+                    <li class="list-group-item">
+                        <p class="fw-bold p-0 m-0">Todos</p>
+                    </li>
+                    <a href="#" class="list-group-item list-group-item-action">500 elementos</a>
+
+                    <!--Capítulos-->
+                    <button type="button" class="list-group-item list-group-item-action fw-bold" id="toggleCapitulos">Capítulos</button>
+                    <div id="capitulos">
+                        <li class="list-group-item">
+                            <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="capitulo1" id="CapIRadio">
+                            <label class="form-check-label" for="CapIRadio">Capítulo I</label>
+                        </li>
+                        <li class="list-group-item">
+                            <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="capitulo2" id="CapIIRadio">
+                            <label class="form-check-label" for="CapIIRadio">Capítulo II</label>
+                        </li>
+                        <li class="list-group-item">
+                            <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="capitulo3" id="CapIIIRadio">
+                            <label class="form-check-label" for="CapIIIRadio">Capítulo III</label>
+                        </li>
+                        <li class="list-group-item">
+                            <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="capitulo4" id="CapIVRadio">
+                            <label class="form-check-label" for="CapIVRadio">Capítulo IV</label>
+                        </li>
+                        <li class="list-group-item">
+                            <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="capitulo5" id="CapVRadio">
+                            <label class="form-check-label" for="CapVRadio">Capítulo V</label>
+                        </li>
+                        <li class="list-group-item">
+                            <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="capitulo6" id="CapVIRadio">
+                            <label class="form-check-label" for="CapVIRadio">Capítulo VI</label>
+                        </li>
+                        <li class="list-group-item">
+                            <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="capitulo7" id="CapVIIRadio">
+                            <label class="form-check-label" for="CapVIIRadio">Capítulo VII</label>
+                        </li>
+                        <li class="list-group-item">
+                            <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="capitulo8" id="CapVIIIRadio">
+                            <label class="form-check-label" for="CapVIIIRadio">Capítulo VIII</label>
+                        </li>
+                        <li class="list-group-item">
+                            <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="capitulo9" id="CapIXRadio">
+                            <label class="form-check-label" for="CapIXRadio">Capítulo IX</label>
+                        </li>
+                        <li class="list-group-item">
+                            <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="capitulo10" id="CapXRadio">
+                            <label class="form-check-label" for="CapXRadio">Capítulo X</label>
+                        </li>
+                        <li class="list-group-item">
+                            <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="capitulo11" id="CapXIRadio">
+                            <label class="form-check-label" for="CapXIRadio">Capítulo XI</label>
+                        </li>
+                        <li class="list-group-item">
+                            <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="capitulo12" id="CapXIIRadio">
+                            <label class="form-check-label" for="CapXIIRadio">Capítulo XII</label>
+                        </li>
+                    </div>
+                    
+                    <!--Cláusulas-->
+                    <button type="button" class="list-group-item list-group-item-action fw-bold" id="toggleClausulas">Cláusulas</button>
+                    <div id="clausulas">
+                        <li class="list-group-item">
+                            <input class="form-check-input me-1" type="radio" name="listClauRadio" value="clausula1" id="Clau1Radio">
+                            <label class="form-check-label" for="Clau1Radio">Cláusula primera</label>
+                        </li>
+                        <li class="list-group-item">
+                            <input class="form-check-input me-1" type="radio" name="listClauRadio" value="clausula2" id="Clau2Radio">
+                            <label class="form-check-label" for="Clau2Radio">Cláusula segunda</label>
+                        </li>
+                        <li class="list-group-item">
+                            <input class="form-check-input me-1" type="radio" name="listClauRadio" value="clausula3" id="Clau3Radio">
+                            <label class="form-check-label" for="Clau3Radio">Cláusula tercera</label>
+                        </li>
+                        <li class="list-group-item">
+                            <input class="form-check-input me-1" type="radio" name="listClauRadio" value="clausula4" id="Clau4Radio">
+                            <label class="form-check-label" for="Clau4Radio">Cláusula cuarta</label>
+                        </li>
+                        <li class="list-group-item">
+                            <input class="form-check-input me-1" type="radio" name="listClauRadio" value="clausula5" id="Clau5Radio">
+                            <label class="form-check-label" for="Clau5Radio">Cláusula quinta</label>
+                        </li>
+                        <li class="list-group-item">
+                            <input class="form-check-input me-1" type="radio" name="listClauRadio" value="clausula6" id="Clau6Radio">
+                            <label class="form-check-label" for="Clau6Radio">Cláusula sexta</label>
+                        </li>
+                        <li class="list-group-item">
+                            <input class="form-check-input me-1" type="radio" name="listClauRadio" value="clausula7" id="Clau7Radio">
+                            <label class="form-check-label" for="Clau7Radio">Cláusula séptima</label>
+                        </li>
+                        <li class="list-group-item">
+                            <input class="form-check-input me-1" type="radio" name="listClauRadio" value="clausula8" id="Clau8Radio">
+                            <label class="form-check-label" for="Clau8Radio">Cláusula octava</label>
+                        </li>
+                        <li class="list-group-item">
+                            <input class="form-check-input me-1" type="radio" name="listClauRadio" value="clausula9" id="Clau9Radio">
+                            <label class="form-check-label" for="Clau9Radio">Cláusula novena</label>
+                        </li>
+                       
+                        <button type="button" class="list-group-item list-group-item-action fw-bold toggleClausulas" data-bs-target=".subclausulasDecima">Decimas clausulas</button>
+                        <div class="subclausulas subclausulasDecima">
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="radio" name="listClauRadio" value="clausula10" id="Clau10Radio">
+                                <label class="form-check-label" for="Clau10Radio">Cláusula décima</label>
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="radio" name="listClauRadio" value="clausula11" id="Clau11Radio">
+                                <label class="form-check-label" for="Clau11Radio">Cláusula décima primera</label>
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="radio" name="listClauRadio" value="clausula12" id="Clau12Radio">
+                                <label class="form-check-label" for="Clau12Radio">Cláusula décima segunda</label>
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="radio" name="listClauRadio" value="clausula13" id="Clau13Radio">
+                                <label class="form-check-label" for="Clau13Radio">Cláusula décima tercera</label>
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="radio" name="listClauRadio" value="clausula14" id="Clau14Radio">
+                                <label class="form-check-label" for="Clau14Radio">Cláusula décima cuarta</label>
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="radio" name="listClauRadio" value="clausula15" id="Clau15Radio">
+                                <label class="form-check-label" for="Clau15Radio">Cláusula décima quinta</label>
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="radio" name="listClauRadio" value="clausula16" id="Clau16Radio">
+                                <label class="form-check-label" for="Clau16Radio">Cláusula décima sexta</label>
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="radio" name="listClauRadio" value="clausula17" id="Clau17Radio">
+                                <label class="form-check-label" for="Clau17Radio">Cláusula décima séptima</label>
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="radio" name="listClauRadio" value="clausula18" id="Clau18Radio">
+                                <label class="form-check-label" for="Clau18Radio">Cláusula décima octava</label>
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="radio" name="listClauRadio" value="clausula19" id="Clau19Radio">
+                                <label class="form-check-label" for="Clau19Radio">Cláusula décima novena</label>
+                            </li>
+                        </div>
+                        <button type="button" class="list-group-item list-group-item-action fw-bold toggleClausulas" data-bs-target=".subclausulasVigesimas">Vigésimas clausulas</button>
+                        <div class="subclausulas subclausulasVigesimas">
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="radio" name="listClauRadio" value="clausula20" id="Clau20Radio">
+                                <label class="form-check-label" for="Clau20Radio">Cláusula vigésima</label>
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="radio" name="listClauRadio" value="" id="Clau21Radio">
+                                <label class="form-check-label" for="Clau21Radio">Cláusula vigésima primera</label>
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="radio" name="listClauRadio" value="" id="Clau22Radio">
+                                <label class="form-check-label" for="Clau22Radio">Cláusula vigésima segunda</label>
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="radio" name="listClauRadio" value="" id="Clau23Radio">
+                                <label class="form-check-label" for="Clau23Radio">Cláusula vigésima tercera</label>
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="radio" name="listClauRadio" value="" id="Clau24Radio">
+                                <label class="form-check-label" for="Clau24Radio">Cláusula vigésima cuarta</label>
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="radio" name="listClauRadio" value="" id="Clau25Radio">
+                                <label class="form-check-label" for="Clau25Radio">Cláusula vigésima quinta</label>
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="radio" name="listClauRadio" value="" id="Clau26Radio">
+                                <label class="form-check-label" for="Clau26Radio">Cláusula vigésima sexta</label>
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="radio" name="listClauRadio" value="" id="Clau27Radio">
+                                <label class="form-check-label" for="Clau27Radio">Cláusula vigésima séptima</label>
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="radio" name="listClauRadio" value="" id="Clau28Radio">
+                                <label class="form-check-label" for="Clau28Radio">Cláusula vigésima octava</label>
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="radio" name="listClauRadio" value="" id="Clau29Radio">
+                                <label class="form-check-label" for="Clau29Radio">Cláusula vigésima novena</label>
+                            </li>
+                        </div>
+                        <button type="button" class="list-group-item list-group-item-action fw-bold toggleClausulas" data-bs-target=".subclausulasTrigesima">Trigésimas clausulas</button>
+                        <div class="subclausulas subclausulasTrigesima">
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="radio" name="listClauRadio" value="" id="Clau30Radio">
+                                <label class="form-check-label" for="Clau30Radio">Cláusula trigésima</label>
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="radio" name="listClauRadio" value="" id="Clau31Radio">
+                                <label class="form-check-label" for="Clau31Radio">Cláusula trigésima primera</label>
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="radio" name="listClauRadio" value="" id="Clau32Radio">
+                                <label class="form-check-label" for="Clau32Radio">Cláusula trigésima segunda</label>
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="radio" name="listClauRadio" value="" id="Clau33Radio">
+                                <label class="form-check-label" for="Clau33Radio">Cláusula trigésima tercera</label>
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="radio" name="listClauRadio" value="" id="Clau34Radio">
+                                <label class="form-check-label" for="Clau34Radio">Cláusula trigésima cuarta</label>
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="radio" name="listClauRadio" value="" id="Clau35Radio">
+                                <label class="form-check-label" for="Clau35Radio">Cláusula trigésima quinta</label>
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="radio" name="listClauRadio" value="" id="Clau36Radio">
+                                <label class="form-check-label" for="Clau36Radio">Cláusula trigésima sexta</label>
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="radio" name="listClauRadio" value="" id="Clau37Radio">
+                                <label class="form-check-label" for="Clau37Radio">Cláusula trigésima séptima</label>
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="radio" name="listClauRadio" value="" id="Clau38Radio">
+                                <label class="form-check-label" for="Clau38Radio">Cláusula trigésima octava</label>
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="radio" name="listClauRadio" value="" id="Clau39Radio">
+                                <label class="form-check-label" for="Clau39Radio">Cláusula trigésima novena</label>
+                            </li>
+                        </div>
+
+                        <button type="button" class="list-group-item list-group-item-action fw-bold toggleClausulas" data-bs-target=".subclausulasCuadragesima">Cuadragesimas clausulas</button>
+                        <div class="subclausulas subclausulasCuadragesima">
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="radio" name="listClauRadio" value="" id="Clau40Radio">
+                                <label class="form-check-label" for="Clau40Radio">Cláusula cuadragesima</label>
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="radio" name="listClauRadio" value="" id="Clau41Radio">
+                                <label class="form-check-label" for="Clau41Radio">Cláusula cuadragesima primera</label>
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="radio" name="listClauRadio" value="" id="Clau42Radio">
+                                <label class="form-check-label" for="Clau42Radio">Cláusula cuadragesima segunda</label>
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="radio" name="listClauRadio" value="" id="Clau43Radio">
+                                <label class="form-check-label" for="Clau43Radio">Cláusula cuadragesima tercera</label>
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="radio" name="listClauRadio" value="" id="Clau44Radio">
+                                <label class="form-check-label" for="Clau44Radio">Cláusula cuadragesima cuarta</label>
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="radio" name="listClauRadio" value="" id="Clau45Radio">
+                                <label class="form-check-label" for="Clau45Radio">Cláusula cuadragesima quinta</label>
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="radio" name="listClauRadio" value="" id="Clau46Radio">
+                                <label class="form-check-label" for="Clau46Radio">Cláusula cuadragesima sexta</label>
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="radio" name="listClauRadio" value="" id="Clau47Radio">
+                                <label class="form-check-label" for="Clau47Radio">Cláusula cuadragesima sétima</label>
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="radio" name="listClauRadio" value="" id="Clau48Radio">
+                                <label class="form-check-label" for="Clau48Radio">Cláusula cuadragesima octava</label>
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="radio" name="listClauRadio" value="" id="Clau49Radio">
+                                <label class="form-check-label" for="Clau49Radio">Cláusula cuadragesima novena</label>
+                            </li>
+                        </div>
+
+                        <button type="button" class="list-group-item list-group-item-action fw-bold toggleClausulas" data-bs-target=".subclausulasQuinquagesima">Quinquagesimas clausulas</button>
+                        <div class="subclausulas subclausulasQuinquagesima">
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="radio" name="listClauRadio" value="" id="Clau50Radio">
+                                <label class="form-check-label" for="Clau50Radio">Cláusula quinquagésima</label>
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="radio" name="listClauRadio" value="" id="Clau50Radio">
+                                <label class="form-check-label" for="Clau50Radio">Cláusula quinquagésima</label>
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="radio" name="listClauRadio" value="" id="Clau51Radio">
+                                <label class="form-check-label" for="Clau51Radio">Cláusula quinquagésima primera</label>
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="radio" name="listClauRadio" value="" id="Clau52Radio">
+                                <label class="form-check-label" for="Clau52Radio">Cláusula quinquagésima segunda</label>
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="radio" name="listClauRadio" value="" id="Clau53Radio">
+                                <label class="form-check-label" for="Clau53Radio">Cláusula quinquagésima tercera</label>
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="radio" name="listClauRadio" value="" id="Clau54Radio">
+                                <label class="form-check-label" for="Clau54Radio">Cláusula quinquagésima cuarta</label>
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="radio" name="listClauRadio" value="" id="Clau55Radio">
+                                <label class="form-check-label" for="Clau55Radio">Cláusula quinquagésima quinta</label>
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input me-1" type="radio" name="listClauRadio" value="" id="Clau56Radio">
+                                <label class="form-check-label" for="Clau56Radio">Cláusula quinquagésima sexta</label>
+                            </li>
+                        </div>
+                    </div>
+
+                    <!--Transitorios-->
+                    <button type="button" class="list-group-item list-group-item-action fw-bold" id="toggleTransitorios">Transitorios</button>
+                    <div id="transitorios">
+                        <li class="list-group-item">
+                            <input class="form-check-input me-1" type="radio" name="listransitorioRadio" value="" id="transito1Radio">
+                            <label class="form-check-label" for="transito1Radio">Primero</label>
+                        </li>
+                        <li class="list-group-item">
+                            <input class="form-check-input me-1" type="radio" name="listransitorioRadio" value="" id="transito2Radio">
+                            <label class="form-check-label" for="transito2Radio">Segundo</label>
+                        </li>
+                        <li class="list-group-item">
+                            <input class="form-check-input me-1" type="radio" name="listransitorioRadio" value="" id="transito3Radio">
+                            <label class="form-check-label" for="transito3Radio">Tercero</label>
+                        </li>
+                        <li class="list-group-item">
+                            <input class="form-check-input me-1" type="radio" name="listransitorioRadio" value="" id="transito4Radio">
+                            <label class="form-check-label" for="transito4Radio">Cuarto</label>
+                        </li>
+                        <li class="list-group-item">
+                            <input class="form-check-input me-1" type="radio" name="listransitorioRadio" value="" id="transito5Radio">
+                            <label class="form-check-label" for="transito5Radio">Quinto</label>
+                        </li>
+                        <li class="list-group-item">
+                            <input class="form-check-input me-1" type="radio" name="listransitorioRadio" value="" id="transito6Radio">
+                            <label class="form-check-label" for="transito6Radio">Sexto</label>
+                        </li>
+                        <li class="list-group-item">
+                            <input class="form-check-input me-1" type="radio" name="listransitorioRadio" value="" id="transito7Radio">
+                            <label class="form-check-label" for="transito7Radio">Séptimo</label>
+                        </li>
+                        <li class="list-group-item">
+                            <input class="form-check-input me-1" type="radio" name="listransitorioRadio" value="" id="transito8Radio">
+                            <label class="form-check-label" for="transito8Radio">Octavo</label>
+                        </li>
+                        <li class="list-group-item">
+                            <input class="form-check-input me-1" type="radio" name="listransitorioRadio" value="" id="transito9Radio">
+                            <label class="form-check-label" for="transito9Radio">Noveno</label>
+                        </li>
+                        <li class="list-group-item">
+                            <input class="form-check-input me-1" type="radio" name="listransitorioRadio" value="" id="transito10Radio">
+                            <label class="form-check-label" for="transito10Radio">Décimo</label>
+                        </li>
+                        <li class="list-group-item">
+                            <input class="form-check-input me-1" type="radio" name="listransitorioRadio" value="" id="transito11Radio">
+                            <label class="form-check-label" for="transito11Radio">Onceavo</label>
+                        </li>
+                        <li class="list-group-item">
+                            <input class="form-check-input me-1" type="radio" name="listransitorioRadio" value="" id="transito12Radio">
+                            <label class="form-check-label" for="transito12Radio">Undécimo</label>
+                        </li>
+                    </div>
+                    <button type="button" id="filtrarBtn" class="list-group-item list-group-item-action active text-center fs-4" aria-current="true">
+                        Aplicar filtros
+                    </button>
+                </div>
+            </div>
+
+            <div class="col-6 border">
+                <div id="contenido" data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="70" class="p-4">
+                    <h3 id="list-item-1" class="text-center mb-4 fw-bold">CONTRATO COLECTIVO DE TRABAJO QUE CELEBRAN LA UNIVERSIDAD DE LA SIERRA Y EL SINDICATO ÚNICO DE
+                        TRABAJADORES DE LA UNIVERSIDAD DE LA SIERRA</h3>
+                    <h4 id="capitulo1" class="text-center fw-bold">CAPÍTULO I</h4>
+                    <h4 id="list-item-3" class="text-center fw-bold">DISPOSICIONES GENERALES</h4>
+                    <p id="clausula1" class="text-justify">CLÁUSULA PRIMERA. - Las relaciones de trabajo entre la Universidad de la Sierra y sus
+                        trabajadores se regirán por: La Ley Federal del Trabajo,
+                        el Decreto que Crea la Universidad de la Sierra, este Contrato Colectivo de Trabajo y demás reglamentación
+                        interna vigente de la Universidad
+                        de la Sierra en lo que no contravenga al presente Contrato Colectivo de Trabajo.
+                    </p>
+                    <p id="clausula2" class="text-justify">CLÁUSULA SEGUNDA. - Este Contrato Colectivo de Trabajo es obligatorio para la Universidad de la
+                        Sierra,
+                        sus Trabajadores y el Sindicato Único de Trabajadores de la Universidad de la Sierra, todos con domicilio
+                        en carretera Moctezuma-Cumpas km 2.5 Moctezuma, Sonora. Se aplicará en todas las Unidades Académicas y
+                        Administrativas
+                        de la Universidad de la Sierra, ubicadas o por ubicarse en el Estado de Sonora o en cualquier otra entidad del
+                        país.
+                
+                        El presente contrato es por tiempo indefinido y se revisará cada dos años en términos de lo establecido por el
+                        artículo 399
+                        de la Ley Federal del Trabajo, y demás disposiciones aplicables, y cada año en lo que se refiere a los salarios
+                        en efectivo
+                        por cuota diaria, en términos del artículo 399 bis de dicha Ley, y demás disposiciones legales aplicables.
+                
+                        Por acuerdo entre las partes, los Trabajadores de Confianza no gozarán de las prestaciones del Contrato
+                        Colectivo de Trabajo,
+                        salvo aquellas que hayan sido adquiridas con anterioridad a este convenio debiéndose estarse, además,
+                        a lo establecido por los artículos 9° y 183 de la Ley Federal del Trabajo.
+                    </p>
+                    <p id="clausula3" class="text-justify">
+                        CLÁUSULA TERCERA.- Para los efectos de este Contrato Colectivo de Trabajo,
+                        la Universidad de la Sierra estará representada por el Director General (Rector), Titular del Organismo;
+                        los Trabajadores estarán representados por el Comité Ejecutivo del Sindicato Único de Trabajadores de la
+                        Universidad de la Sierra,
+                        o por el Secretario General, en su calidad de representantes debidamente acreditados de la organización que la
+                        Universidad reconoce
+                        como quien representa el mayor interés profesional de sus trabajadores manuales, de servicio, administrativos,
+                        académicos, y docentes,
+                        y por tanto como único titular y administrador del presente Contrato Colectivo de Trabajo, aun cuando este
+                        Sindicato titular,
+                        cambiare su denominación o demarcación jurisdiccional dentro del Distrito, Estado o la Nación, reconociendo,
+                        especialmente su carácter de único Sindicato Titular en funciones dentro de la Universidad.
+                        <p class="text-justify">
+                            El Rector podrá delegar su representación en los titulares de las diversas 
+                            Unidades Administrativas de la Universidad; y el Comité Ejecutivo del Sindicato Único de Trabajadores de la Universidad de la Sierra,
+                            en los delegados o comisiones que formalmente se designen en los centros de trabajo o Unidades Administrativas o Académicas.
+                            En ambos casos, previa notificación por escrito de las partes.
+                        </p>
+                        <p class="text-justify">
+                            La Universidad de la Sierra reconoce desde este momento que la representación legal del Sindicato Único de Trabajadores de la 
+                            Universidad de la Sierra será sustentada por el Comité Ejecutivo en Pleno o por el Secretario General del Sindicato.
+                        </p>
+                        <p class="text-justify">
+                            La Universidad se abstendrá de intervenir o participar en asuntos internos del Sindicato.
+                        </p>
+                    </p>
+                    <p id="clausula4" class="text-justify">
+                        CLÁUSULA CUARTA. - Para los efectos del presente ordenamiento,
+                        los términos que se enlistan tendrán el significado que a cada uno se asigna:
+                        <br>
+                        <span class="fw-bold">I.- </span>"Universidad", la Universidad de la Sierra;
+                        <br>
+                        <span class="fw-bold">II.-</span> “Titular, el Rector de la Universidad de la Sierra;
+                        <br>
+                        <span class="fw-bold">III.-</span> “Sindicato", el Sindicato Único de Trabajadores de la Universidad de la Sierra;
+                        <br>
+                        <span class="fw-bold">IV.-</span> “Secretario General”, el representante del Sindicato Único de Trabajadores de la
+                        Universidad de la Sierra;
+                        <br>
+                        <span class="fw-bold">V.-</span> "Decreto", el Decreto que crea la Universidad de la Sierra, emitido por el Poder
+                        Ejecutivo del Estado de Sonora el 12 de abril de 2002, y publicado en el Diario Oficial del Estado de Sonora el día
+                        15 de abril del mismo año;
+                        <br>
+                        <span class="fw-bold">VI.-</span> “Ley", la Ley Federal del Trabajo;
+                        <br>
+                        <span class="fw-bold">VII.-</span> “ISSSTESON", el Instituto de Seguridad y Servicios Sociales de los Trabajadores
+                        al Servicio del Estado de Sonora;
+                        <br>
+                        <span class="fw-bold">VIII.-</span> “Contrato”, el presente Contrato Colectivo de Trabajo;
+                        <br>
+                        <span class="fw-bold">IX.-</span> “Ley del ISSSTESON", la Ley del Instituto de Seguridad y Servicios Sociales de los
+                        Trabajadores al Servicio del Estado de Sonora y sus reformas;
+                        <br>
+                        <span class="fw-bold">X.-</span> “Unidad Administrativa" o “Unidades Administrativas” son las que integran a la
+                        Universidad de la Sierra, señaladas en el Reglamento Interior de la misma, en cualquiera de sus instalaciones o
+                        fuera de ellas;
+                        <br>
+                        <span class="fw-bold">XI.-</span> “Unidad Académica”, son las que integran a la Universidad de la Sierra en sus
+                        funciones académicas en cualquiera de sus instalaciones o fuera de ellas;
+                        <br>
+                        <span class="fw-bold">XII.-</span> “Trabajador” o "Trabajadores”, los Trabajadores al servicio de la Universidad de
+                        la Sierra que desempeñan labores académicas, administrativas o de servicios;
+                        <br>
+                        <span class="fw-bold">XIII.-</span> “Trabajador Académico” es el profesor de tiempo completo, profesor de medio
+                        tiempo, profesor de asignatura, de tiempo determinado y técnicos académicos;
+                        <br>
+                        <span class="fw-bold">XIV.-</span> “Trabajador Administrativo” es el que desarrolla trabajos administrativos en la
+                        Universidad;
+                        <br>
+                        <span class="fw-bold">XV.-</span> “Trabajador de Servicios” es el que desarrolla servicios manuales y de
+                        mantenimiento, o servicios diversos al académico y administrativo;
+                        <br>
+                        <span class="fw-bold">XVI.-</span> El “Miembro” o los “Miembros”, el trabajador o trabajadores que formen parte del
+                        Sindicato.
+                        <br>
+                        <span class="fw-bold">X.- </span> “Plaza” o “Plazas”, las que se establezcan en el presente contrato colectivo como
+                        sindicalizadas o sindicalizables;
+                        <br>
+                        <span class="fw-bold">XVIII.- </span> "Hora-Semana-Mes", es una hora aula impartida una vez por semana, cada semana,
+                        por un mes;
+                        <br>
+                        <span class="fw-bold">XIX.-</span> “Reglamento Académico”, es el Reglamento para Ingreso, Permanencia y Promoción
+                        del Personal Académico;
+                        <br>
+                        <span class="fw-bold">XX.-</span> "Delegación Sindical", las constituidas o que constituya el Sindicato, de acuerdo
+                        a los estatutos sindicales, en las distintas Unidades Administrativas o Académicas externas al plantel de origen o
+                        foráneas de la Universidad;
+                        <br>
+                        <span class="fw-bold">XXI.-</span> “Puesto” o “Puestos” es un puesto o puestos de trabajo indicados en el “Tabulador
+                        de Puestos y Salarios” del presente “Contrato”;
+                        <br>
+                        <span class="fw-bold">XXII.--</span> “Manual de Organización”, es el documento que contiene objetivos y funciones de
+                        los puestos que integran las Unidades Administrativas y Académicas;
+                        <br>
+                        <span class="fw-bold">XXIII.-</span> “Reglamento Interior”, es el Reglamento Interior de la Universidad de la
+                        Sierra;
+                        <br>
+                        <span class="fw-bold">XXIV.-</span> “Centro”, el Centro Federal de Conciliación y Registro Laboral.
+                        <br>
+                        <span class="fw-bold">XXV.-</span> “Tribunal”, al Tribunal Laboral.
+                        <br>
+                        <span class="fw-bold">XXVI.-</span> “Salario” o “Sueldo”, es la retribución que debe pagar la Universidad al
+                        Trabajador en razón de los servicios prestados;
+                        <br>
+                        <span class="fw-bold">XXVII.-</span> “Salario Base” o “Sueldo Base”- Es la retribución económica mensual bruta que
+                        por sus servicios se le paga permanentemente al Trabajador y está estipulado como tal en el Tabulador de Puestos y
+                        Salarios de este Contrato;
+                        <br>
+                        <span class="fw-bold">XXVIII.-</span> “Salario Integrado o Sueldo Integrado”, es la retribución económica mensual
+                        que se le paga permanentemente al Trabajador por concepto de Sueldo Base, Servicios Especiales, Quinquenio y
+                        Estímulos, y que están estipulados como tales en el Tabulador de Puestos y Salarios de este Contrato, en su
+                        clausulado y en la Ley;
+                        <br>
+                        <span class="fw-bold">XXIX.-</span> “SMVZ”, es el Salario Mínimo Vigente en la Zona Económica que corresponda al
+                        lugar de trabajo;
+                        <br>
+                        <span class="fw-bold">XXX.-</span> “Tabulador de Puestos y Salarios”, es el documento o cláusulas del presente
+                        contrato, en el cual se establece el Sueldo Base y el Sueldo Integrado para cada puesto;
+                        <br>
+                        <span class="fw-bold">XXXI.-</span> “Permiso Económico” o “Permisos Económicos”. - Permisos con goce de sueldo
+                        concedidos a los trabajadores;
+                        <br>
+                        <span class="fw-bold">XXXII.-</span> “Quinquenio”, es la percepción económica que le corresponde al trabajador por
+                        cada cinco años continuos de trabajo en la Universidad, que se computan individualmente respecto a su antigüedad.
+                        <br>
+                        <span class="fw-bold">XXXIII.-</span> “Beneficiario”, aquella persona acreedora al estímulo y/o incentivo.
+                        <br>
+                        <span class="fw-bold">XXXIV.-</span> “Estímulo e Incentivo”, reconocimiento o motivación en especie.
+                        <br>
+                        <span class="fw-bold">XXXV.-</span> “Incentivo”, reconocimiento con valor material.
+                        <br>
+                        <span class="fw-bold">XXXVI.-</span> Personal de la Universidad de la Sierra. Personal docente de tiempo completo,
+                        técnico académico y de servicios.
+                    </p>
+                    <p class="text-justify">
+                        En todo caso, al emplearse estos términos se incluyen sus respectivos féminos o plurales, 
+                        sin perjuicio de que también se empleen de esa manera, aunque no se señalen específicamente en este listado.
+                    </p>
+                    <p id="clausula5" class="text-justify">
+                        CLÁUSULA QUINTA. - El Sindicato representa a los Miembros en la defensa de sus derechos laborales, 
+                        sin perjuicio de que aquellos elijan hacerlo por sí mismos.Serán materia del presente Contrato y por tanto de la competencia y 
+                        representación del Sindicato, toda acción, evento, situación o conflicto que afecte, influya o tenga que ver con las prestaciones,
+                        intereses laborales de los Trabajadores.
+                    </p>
+                    <p id="clausula6" class="text-justify">
+                        CLÁUSULA SEXTA. - El Sindicato, además de la defensa de los derechos de sus miembros, 
+                        podrá auxiliarlos en la tramitación de sus derechos laborales.
+                    </p>
+                    <p id="clausula7" class="text-justify">
+                        CLÁUSULA SÉPTIMA El “Titular” y cualquier autoridad de la Universidad, 
+                        previa solicitud de audiencia, deben recibir, atender y dar solución oportuna, 
+                        cuando proceda al “Secretario General” o a cualquiera de los representantes sindicales, 
+                        sobre asuntos de interés laboral del Sindicato siempre mediando respuestas oficiales y por escrito.
+
+                        <p class="text-justify">
+                            En los casos que el Secretario General o los diversos representantes sindicales juzguen necesario, 
+                            podrán hacerse acompañar de los miembros involucrados en el asunto a tratar.
+                        </p>
+                    </p>
+                </div>
+            </div>
+            <div class="col-3 border">
+                <div class="list-group">
+                    <li class="list-group-item listheader text-center fs-4">Categorías del apartado</li>
+                    <a href="#" class="list-group-item list-group-item-action">Disposiciones generales</a>
+                    <a href="#" class="list-group-item list-group-item-action">Contratación de personal</a>
+                    <a href="#" class="list-group-item list-group-item-action">Personal</a>
+                    <a href="#" class="list-group-item list-group-item-action">Nombramientos y contratos</a>
+                    <a href="#" class="list-group-item list-group-item-action">Jornada de trabajo</a>
+                    <a href="#" class="list-group-item list-group-item-action">Descansos, vacaciones, licencias y permisos</a>
+                    <a href="#" class="list-group-item list-group-item-action">Tabulador de puestos y salarios</a>
+                    <a href="#" class="list-group-item list-group-item-action">Prestaciones generales</a>
+                    <a href="#" class="list-group-item list-group-item-action">Seguridad social</a>
+                    <a href="#" class="list-group-item list-group-item-action">Derechos y obligaciones</a>
+                    <a href="#" class="list-group-item list-group-item-action">Ajuste a la inflación e incentivos</a>
+                    <a href="#" class="list-group-item list-group-item-action">Programa de estímulos e incentivos al personal de la Universidad de la Sierra</a>
+                    <a href="#" class="list-group-item list-group-item-action">Criterios y puntuación para la evaluación del personal docente</a>
+                    <a href="#" class="list-group-item list-group-item-action">Consideraciones para la valoración de los criterios de la docencia</a>
+                    <a href="#" class="list-group-item list-group-item-action">Criterios y puntuación para la evaluación del personal técnico académico</a>
+                    <a href="#" class="list-group-item list-group-item-action">Consideraciones para la valoración de los criterios de la docencia (técnico académico)</a>
+                    <a href="#" class="list-group-item list-group-item-action">Criterios y puntuación para la evaluación del personal de servicios</a>
+                    <a href="#" class="list-group-item list-group-item-action">Consideraciones para la valoración de los criterios del personal de servicios</a>
+                    <a href="#" class="list-group-item list-group-item-action">Comisión institucional de la evaluación</a>
+                    <a href="#" class="list-group-item list-group-item-action">Comisión de seguimiento</a>
+                    <a href="#" class="list-group-item list-group-item-action">Inconformidades</a>
+                    <a href="#" class="list-group-item list-group-item-action">Terminación de los efectos de la relación y contrato de trabajo</a>
+                    <a href="#" class="list-group-item list-group-item-action">Derechos y obligaciones</a>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="container-fluid text-bg-primary text-center text-lg-start">
+        <div class="row">
+            <div class="col-lg-4 col-md-6 mb-4 ps-5 lineadiv">
+                <div class="pt-4 p-md-5">
+                    <h3 class="fw-bold lineaSelect">Información de contacto</h3>
+                    <p class="p-1">Carr. Moctezuma a Cumpas Km. 2.5 Interior <br>Universidad de la Sierra 84560
+                        Moctezuma, Sonora,
+                        México</p>
+                    <p class="p-1">Teléfono: (+52) 634 3456</p>
+                    <p class="p-1">Correo: <a href="mailto:support@suport.com" class="text-white">support@sutus.com</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-4 text-center lineadiv">
+                <div class="p-0 p-md-5">
+                    <h3 class="fw-bold lineaSelect">Galería de fotos</h3>
+                    <p>Consulta la galería de fotos</p>
+                    <div class="row pt-3">
+                        <div class="offset-3 col-2">
+                            <a href="#">
+                                <img src="/img/ImagenUnisierra1.jpg"
+                                    alt="Foto 1" class="img-fluid" class="">
+                            </a>
+                        </div>
+                        <div class="col-2">
+                            <a href="#">
+                                <img src="/img/ImagenUnisierra2.jpg"
+                                    alt="Foto 2" class="img-fluid" class="">
+                            </a>
+                        </div>
+                        <div class="col-2">
+                            <a href="#">
+                                <img src="/img/ImagenUnisierra3.jpg"
+                                    alt="Foto 3" class="img-fluid" class="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row pt-3">
+                        <div class="offset-3 col-2">
+                            <a href="#">
+                                <img src="/img/ImagenUnisierra4.jpg"
+                                    alt="Foto 4" class="img-fluid" class="">
+                            </a>
+                        </div>
+
+                        <div class="col-2">
+                            <a href="#">
+                                <img src="/img/ImagenUnisierra5.jpg"
+                                    alt="Foto 5" class="img-fluid" class="">
+                            </a>
+                        </div>
+
+                        <div class="col-2">
+                            <a href="#">
+                                <img src="/img/ImagenUnisierra6.jpg"
+                                    alt="Foto 6" class="img-fluid" class="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-12 mb-4">
+                <div class="d-flex justify-content-center">
+                    <h3 class="fw-bold lineaSelect">Ubicanos</h3>
+                </div>
+                <div class="d-flex justify-content-center">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3461.4004419916787!2d-109.67844439999999!3d29.8238611!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjnCsDQ5JzI1LjkiTiAxMDnCsDQwJzQyLjQiVw!5e0!3m2!1ses-419!2smx!4v1730752694377!5m2!1ses-419!2smx"
+                        style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                        class="ubicacion">
+                    </iframe>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+    <div class="container-fluid text-center p-3 text-bg-terciary">
+        <div class="row justify-content-between">
+            <div class="col-3" style="height: 45px;">
+                <div class="d-flex justify-content-center">
+                    <div class="p-2 me-4" style="background-color: #7995AB;"><a
+                            href="https://www.facebook.com/people/Sindicato-%C3%9Anico-de-Trabajadores-de-la-Universidad-de-la-Sierra/61566971434328/"><img
+                                src="/img/iconfacebook.png"
+                                alt=""></a></div>
+                    <div class="p-2 me-4" style="background-color: #7995AB;"><img
+                            src="/img/iconinstagram.png" alt=""></div>
+                    <div class="p-2 me-4" style="background-color: #7995AB;"><img
+                            src="/img/iconx.png" alt=""></div>
+                    <div class="p-2" style="background-color: #7995AB;"><img
+                            src="/img/iconlinkedin.png" alt=""></div>
+                </div>
+            </div>
+            <div class="col-4 d-flex justify-content-center align-items-center" style="height: 45px;">
+                <p class="m-0 text-light">© 2024 Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </div>
+    <script src="/js/bootstrap.bundle.js"></script>
+    <script src="/js/contratocolectivo.js"></script>
+    <script src="/js/archivos_normatividad.js"></script>
+    <script src="/js/autenticacion.js"></script>
+</body>
+</html>

@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/bootstrap.scss">
+    <link rel="stylesheet" href="/css/quienes_somos.css">
+    <link rel="stylesheet" href="/css/componentes.css">
+    <title>Document</title>
+</head>
+<body>
+    <header class="fluid-container"></header>
+    <nav class="navbar navbar-expand-md fluid-container">
+        <div class="container-fluid">
+            <a class="navbar-brand me-auto pb-3" href="/views/home.html">
+                <img src="/img/SUTUS20.png" alt="LogoSutus" width="150"
+                    height="90">
+            </a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto d-flex flex-wrap justify-content-md-center">
+                    <li class="nav-item">
+                        <a class="nav-link"
+                            href="/views/home.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page"
+                            href="/views/quienes_somos.html">¿Quienes somos?</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">Organización</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item menuRedondoP"
+                                    href="/views/comite_ejecutivo.html">Comité
+                                    ejecutivo</a></li>
+                            <li><a class="dropdown-item menuRedondoU" href="#">Comité de vigilancia, honor y
+                                    justicia</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">Normatividad</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item menuRedondoP"
+                                    href="/views/contrato_colectivo_de_trabajo.html">Contrato
+                                    colectivo del trabajo</a></li>
+                            <li><a class="dropdown-item" href="#">Ley federal del trabajo</a></li>
+                            <li><a class="dropdown-item" href="#">Estatuto del sindicato</a></li>
+                            <li><a class="dropdown-item menuRedondoU" href="#">Código de ética</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">Documentos</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item menuRedondoP"
+                                    href="/views/padronAgremiados.html">Padrón de
+                                    agremiados</a></li>
+                            <li><a class="dropdown-item"
+                                    href="/views/convocatorias.html">Convocatorias</a>
+                            </li>
+                            <li><a class="dropdown-item menuRedondoU"
+                                    href="/views/formatos.html">Formatos</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"
+                            href="/views/servicios.html">Servicios</a>
+                    </li>
+                    <li class="nav-item" id="adminPanel">
+                        <a class="nav-link" href="/views/panel_de_control.html">Panel de control</a>
+                    </li>
+                    <li class="nav-item" id="solicitudes">
+                        <a class="nav-link" href="/views/actualizar_solicitud.html">Mis solicitudes</a>
+                    </li>
+                </ul>
+            </div>
+            <button id="loginButton" class="btn btn-secondary" type="button">Ingresar</button>
+            <button id="logoutButton" class="btn btn-danger" type="button">Cerrar Sesión</button>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+    <main class="container-fluid">
+        <div class="row">
+            <div class="col-12 pt-5 d-flex align-items-center">
+                <h1 class="me-4">¿Quienes somos?</h1>
+                <hr class="lineaSeccCont">
+            </div>
+            <div class="col-12 col-md-5 offset-md-1 pe-5">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Curabitur feugiat mattis urna ac laoreet. Vivamus porta sem massa,
+                    in fringilla leo vulputate et. In faucibus sit amet leo vel vestibulum.
+                    Nullam dignissim lectus mauris, sed posuere elit accumsan et. Suspendisse purus nibh,
+                    fermentum eu efficitur ac, dictum et sapien. Integer dignissim sollicitudin libero a hendrerit.
+                    Nam sed porta augue. Cras eget rhoncus purus, at mollis tellus. Nam vel nibh dui. Phasellus mattis,
+                    libero quis maximus posuere, erat nunc tempus sapien, a commodo quam nunc at odio.
+                </p>
+            </div>
+            <div class="col-12 col-md-5 pb-5">
+                <img src="/img/comite_SUTUS.jpg" class="img-fluid" alt="">
+            </div>
+        </div>
+        <div class="row container-secondary">
+            <div class="col-12 text-end pt-5 d-flex align-items-center">
+                <h1 class="order-2 ms-4">Nuestra historia</h1>
+                <hr class="order-1 lineaSeccCont">
+            </div>
+
+            <div class="col-12 col-md-5 offset-md-1 pe-5 pb-4">
+                <div id="timelineCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item tmTransition active">
+                            <h3>2002 - 2005</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Curabitur feugiat mattis urna ac laoreet. Vivamus porta sem massa,
+                                in fringilla leo vulputate et. In faucibus sit amet leo vel vestibulum.
+                                Nullam dignissim lectus mauris, sed posuere elit accumsan et. Suspendisse purus nibh,
+                                fermentum eu efficitur ac, dictum et sapien. Integer dignissim sollicitudin libero a
+                                hendrerit.
+                                Nam sed porta augue. Cras eget rhoncus purus, at mollis tellus. Nam vel nibh dui. Phasellus
+                                mattis,
+                                libero quis maximus posuere, erat nunc tempus sapien, a commodo quam nunc at odio.
+                            </p>
+                        </div>
+                        <div class="carousel-item tmTransition">
+                            <h3>2010 - 2015</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Curabitur feugiat mattis urna ac laoreet. Vivamus porta sem massa,
+                                in fringilla leo vulputate et. In faucibus sit amet leo vel vestibulum.
+                                Nullam dignissim lectus mauris, sed posuere elit accumsan et. Suspendisse purus nibh,
+                                fermentum eu efficitur ac, dictum et sapien. Integer dignissim sollicitudin libero a
+                                hendrerit.
+                                Nam sed porta augue. Cras eget rhoncus purus, at mollis tellus. Nam vel nibh dui. Phasellus
+                                mattis,
+                                libero quis maximus posuere, erat nunc tempus sapien, a commodo quam nunc at odio.
+                            </p>
+                        </div>
+                        <div class="carousel-item tmTransition">
+                            <h3>2015 - 2020</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Curabitur feugiat mattis urna ac laoreet. Vivamus porta sem massa,
+                                in fringilla leo vulputate et. In faucibus sit amet leo vel vestibulum.
+                                Nullam dignissim lectus mauris, sed posuere elit accumsan et. Suspendisse purus nibh,
+                                fermentum eu efficitur ac, dictum et sapien. Integer dignissim sollicitudin libero a
+                                hendrerit.
+                                Nam sed porta augue. Cras eget rhoncus purus, at mollis tellus. Nam vel nibh dui. Phasellus
+                                mattis,
+                                libero quis maximus posuere, erat nunc tempus sapien, a commodo quam nunc at odio.
+                            </p>
+                        </div>
+                        <div class="carousel-item tmTransition">
+                            <h3>2024</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Curabitur feugiat mattis urna ac laoreet. Vivamus porta sem massa,
+                                in fringilla leo vulputate et. In faucibus sit amet leo vel vestibulum.
+                                Nullam dignissim lectus mauris, sed posuere elit accumsan et. Suspendisse purus nibh,
+                                fermentum eu efficitur ac, dictum et sapien. Integer dignissim sollicitudin libero a
+                                hendrerit.
+                                Nam sed porta augue. Cras eget rhoncus purus, at mollis tellus. Nam vel nibh dui. Phasellus
+                                mattis,
+                                libero quis maximus posuere, erat nunc tempus sapien, a commodo quam nunc at odio.
+                            </p>
+                        </div>
+                    </div>
+    
+                    <div class="process-wrapper">
+                        <input type="radio" class="year1" checked id="radio1">
+                        <input type="radio" class="year2" id="radio2">
+                        <input type="radio" class="year3" id="radio3">
+                        <input type="radio" class="year4" id="radio4">
+                        <div class="header-progress-bar">
+                            <ul class="nav-progress-bar">
+                                <li class="st st1 active">
+                                    <p class="inner">2002 - 2005</p>
+                                </li>
+                                <li class="st st2">
+                                    <p class="inner">2010 - 2015</p>
+                                </li>
+                                <li class="st st3">
+                                    <p class="inner">2015 - 2020</p>
+                                </li>
+                                <li class="st st4">
+                                    <p class="inner">2024</p>
+                                </li>
+                            </ul>
+                            <div class="line">
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-5 pb-5">
+                <img src="/img/comite_SUTUS2.jpg" class="img-fluid" alt="">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 text-end pt-5 d-flex align-items-center">
+                <h1 class="me-4">Nuestro comité ejecutivo</h1>
+                <hr class="lineaSeccCont">
+            </div>
+            <div class="col-12 pt-4">
+                <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="row g-0 p-3">
+                                <div class="img-ejecutivo col-md-4 mb-4 offset-md-1 d-flex justify-content-center align-items-center">
+                                    <img src="/img/profe_Ulises.png" class="img-fluid" alt="">
+                                </div>
+                                <div class="col-md-6 mb-4 d-flex flex-column justify-content-center">
+                                    <h4>Ulises Ponce Mendoza > Secretario General</h4>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                        Curabitur feugiat mattis urna ac laoreet. Vivamus porta sem massa,
+                                        in fringilla leo vulputate et. In faucibus sit amet leo vel vestibulum.
+                                        Nullam dignissim lectus mauris, sed posuere elit accumsan et. Suspendisse purus
+                                        nibh,
+                                        fermentum eu efficitur ac, dictum et sapien. Integer dignissim sollicitudin libero a
+                                        hendrerit.
+                                        Nam sed porta augue.
+                                    </p>
+                                    <h5>Roles y responsabilidades</h5>
+                                    <div class="d-block">
+                                        <div class="d-flex p-2 align-items-center">
+                                            <img src="/img/icon-marca-de-verificación.png" alt="">
+                                            <p>Representante del sindicato</p>
+                                        </div>
+                                        <div class="d-flex p-2 align-items-center">
+                                            <img src="/img/icon-marca-de-verificación.png" alt="">
+                                            <p>Gestión de documentos y firmado de actas.</p>
+                                        </div>
+                                        <div class="d-flex p-2 align-items-center">
+                                            <img src="/img/icon-marca-de-verificación.png" alt="">
+                                            <p>Informar a la junta directiva sobre las peticiones y
+                                                comunicaciones recibidas.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="carousel-item">
+                            <div class="row g-0 p-3">
+                                <div class="img-ejecutivo col-md-4 mb-4 offset-md-1 d-flex justify-content-center align-items-center">
+                                    <img src="/img/profe_Elvira.png" style="width: 260px; height: 410px;" alt="...">
+                                </div>
+                                <div class="col-md-6 mb-4 d-flex flex-column justify-content-center ">
+                                    <h4>María Elvira Gil León > Secretaria de organización</h4>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                        Curabitur feugiat mattis urna ac laoreet. Vivamus porta sem massa,
+                                        in fringilla leo vulputate et. In faucibus sit amet leo vel vestibulum.
+                                        Nullam dignissim lectus mauris, sed posuere elit accumsan et. Suspendisse purus
+                                        nibh,
+                                        fermentum eu efficitur ac, dictum et sapien. Integer dignissim sollicitudin libero a
+                                        hendrerit.
+                                        Nam sed porta augue.
+                                    </p>
+                                    <h5>Roles y responsabilidades</h5>
+                                    <div class="d-block">
+                                        <div class="d-flex p-2 align-items-center">
+                                            <img src="/img/icon-marca-de-verificación.png" alt="">
+                                            <p>Representante del sindicato</p>
+                                        </div>
+                                        <div class="d-flex p-2 align-items-center">
+                                            <img src="/img/icon-marca-de-verificación.png" alt="">
+                                            <p>Gestión de documentos y firmado de actas.</p>
+                                        </div>
+                                        <div class="d-flex p-2 align-items-center">
+                                            <img src="/img/icon-marca-de-verificación.png" alt="">
+                                            <p>Informar a la junta directiva sobre las peticiones y
+                                                comunicaciones recibidas.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="carousel-item">
+                            <div class="row g-0 p-3">
+                                <div class="img-ejecutivo col-md-4 mb-4 offset-md-1 d-flex justify-content-center align-items-center">
+                                    <img src="/img/profe_Alejandra.png" style="width: 230px; height: 390px;" alt="...">
+                                </div>
+                                <div class="col-md-6 mb-4 d-flex flex-column justify-content-center ">
+                                    <h4>Alejandra Frisby Morales > Secretaria de Actas y acuerdos</h4>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                        Curabitur feugiat mattis urna ac laoreet. Vivamus porta sem massa,
+                                        in fringilla leo vulputate et. In faucibus sit amet leo vel vestibulum.
+                                        Nullam dignissim lectus mauris, sed posuere elit accumsan et. Suspendisse purus
+                                        nibh,
+                                        fermentum eu efficitur ac, dictum et sapien. Integer dignissim sollicitudin libero a
+                                        hendrerit.
+                                        Nam sed porta augue.
+                                    </p>
+                                    <h5>Roles y responsabilidades</h5>
+                                    <div class="d-block">
+                                        <div class="d-flex p-2 align-items-center">
+                                            <img src="/img/icon-marca-de-verificación.png" alt="">
+                                            <p>Representante del sindicato</p>
+                                        </div>
+                                        <div class="d-flex p-2 align-items-center">
+                                            <img src="/img/icon-marca-de-verificación.png" alt="">
+                                            <p>Gestión de documentos y firmado de actas.</p>
+                                        </div>
+                                        <div class="d-flex p-2 align-items-center">
+                                            <img src="/img/icon-marca-de-verificación.png" alt="">
+                                            <p>Informar a la junta directiva sobre las peticiones y
+                                                comunicaciones recibidas.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                            class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                            aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                            aria-label="Slide 3"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 text-end pt-5 mb-4 d-flex align-items-center">
+                <h1 class="order-2 ms-4">Algunos Datos</h1>
+                <hr class="order-1 lineaSeccCont">
+            </div>
+            <div class="col-12 d-flex justify-content-evenly">
+                <div class="d-flex flex-column">
+                    <div class="d-flex align-items-center">
+                        <img src="/img/icon-servicios.png" alt="">
+                        <p class="ms-2 mb-0 numGrande">25</p>
+                    </div>
+                    <p class="txtGrande">Servicios</p>
+                </div>
+                <div class="d-flex flex-column">
+                    <div class="d-flex align-items-center">
+                        <img src="/img/icon-grupo.png" alt="">
+                        <p class="ms-2 mb-0 numGrande">25</p>
+                    </div>
+                    <p class="txtGrande">Miembros</p>
+                </div>
+                <div class="d-flex flex-column">
+                    <div class="d-flex align-items-center">
+                        <img src="/img/icon-comite.png" alt="">
+                        <p class="ms-2 mb-0 numGrande">25</p>
+                    </div>
+                    <p class="txtGrande">Comité</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="container-fluid text-bg-primary text-center text-lg-start">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4 ps-5 lineadiv">
+                    <div class="pt-4 p-md-5">
+                        <h3 class="fw-bold lineaSelect">Información de contacto</h3>
+                        <p class="p-1">Carr. Moctezuma a Cumpas Km. 2.5 Interior <br>Universidad de la Sierra 84560
+                            Moctezuma, Sonora,
+                            México</p>
+                        <p class="p-1">Teléfono: (+52) 634 3456</p>
+                        <p class="p-1">Correo: <a href="mailto:support@suport.com" class="text-white">support@sutus.com</a>
+                        </p>
+                    </div>
+                </div>
+    
+                <div class="col-lg-4 col-md-6 mb-4 text-center lineadiv">
+                    <div class="p-0 p-md-5">
+                        <h3 class="fw-bold lineaSelect">Galería de fotos</h3>
+                        <p>Consulta la galería de fotos</p>
+                        <div class="row pt-3">
+                            <div class="offset-3 col-2">
+                                <a href="#">
+                                    <img src="/img/ImagenUnisierra1.jpg"
+                                        alt="Foto 1" class="img-fluid" class="">
+                                </a>
+                            </div>
+                            <div class="col-2">
+                                <a href="#">
+                                    <img src="/img/ImagenUnisierra2.jpg"
+                                        alt="Foto 2" class="img-fluid" class="">
+                                </a>
+                            </div>
+                            <div class="col-2">
+                                <a href="#">
+                                    <img src="/img/ImagenUnisierra3.jpg"
+                                        alt="Foto 3" class="img-fluid" class="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row pt-3">
+                            <div class="offset-3 col-2">
+                                <a href="#">
+                                    <img src="/img/ImagenUnisierra4.jpg"
+                                        alt="Foto 4" class="img-fluid" class="">
+                                </a>
+                            </div>
+    
+                            <div class="col-2">
+                                <a href="#">
+                                    <img src="/img/ImagenUnisierra5.jpg"
+                                        alt="Foto 5" class="img-fluid" class="">
+                                </a>
+                            </div>
+    
+                            <div class="col-2">
+                                <a href="#">
+                                    <img src="/img/ImagenUnisierra6.jpg"
+                                        alt="Foto 6" class="img-fluid" class="">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="col-lg-4 col-md-12 mb-4">
+                    <div class="d-flex justify-content-center">
+                        <h3 class="fw-bold lineaSelect">Ubicanos</h3>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3461.4004419916787!2d-109.67844439999999!3d29.8238611!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjnCsDQ5JzI1LjkiTiAxMDnCsDQwJzQyLjQiVw!5e0!3m2!1ses-419!2smx!4v1730752694377!5m2!1ses-419!2smx"
+                            style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                            class="ubicacion">
+                        </iframe>
+                    </div>
+                </div>
+    
+            </div>
+        </footer>
+        <div class="container-fluid text-center p-3 text-bg-terciary">
+            <div class="row justify-content-between">
+                <div class="col-3" style="height: 45px;">
+                    <div class="d-flex justify-content-center">
+                        <div class="p-2 me-4" style="background-color: #7995AB;"><a
+                                href="https://www.facebook.com/people/Sindicato-%C3%9Anico-de-Trabajadores-de-la-Universidad-de-la-Sierra/61566971434328/"><img
+                                    src="/img/iconfacebook.png"
+                                    alt=""></a></div>
+                        <div class="p-2 me-4" style="background-color: #7995AB;"><img
+                                src="/img/iconinstagram.png" alt=""></div>
+                        <div class="p-2 me-4" style="background-color: #7995AB;"><img
+                                src="/img/iconx.png" alt=""></div>
+                        <div class="p-2" style="background-color: #7995AB;"><img
+                                src="/img/iconlinkedin.png" alt=""></div>
+                    </div>
+                </div>
+                <div class="col-4 d-flex justify-content-center align-items-center" style="height: 45px;">
+                    <p class="m-0 text-light">© 2024 Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/js/bootstrap.bundle.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/autenticacion.js"></script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+.imagen-consistente {
+    width: 289px;  /* Ancho deseado */
+    height: 265px; /* Alto deseado */
+    object-fit: cover; /* Asegura que la imagen mantenga la proporción */
+    border-radius: 15px;
+    border: 1px solid rgba(145, 146, 159, 0.37);
+}
+.text-consistente{
+    width: 289px;
+}
+
+@media (min-width: 768px) and (max-width: 991px){
+    .imagen-consistente{
+        width: 200px;  /* Ancho deseado */
+        height: 220px; /* Alto deseado */
+        object-fit: cover; /* Asegura que la imagen mantenga la proporción */
+        border-radius: 15px;
+        border: 1px solid rgba(145, 146, 159, 0.37);
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px){
+    .text-consistente{
+        width: 200px;
+    }
+}

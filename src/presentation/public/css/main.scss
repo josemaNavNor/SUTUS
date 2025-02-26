@@ -1,0 +1,98 @@
+$principal:#1F7A4B;
+$secundario: #E78446;
+$acierto: #1F613F;
+$informacion: #91929F;
+$advertencia: #ffc107;
+$peligro: #dc3545;
+$blanco: #fff;
+$negro: #000;
+$terciario: #5F7D95;
+$cuaternario: rgba(31, 122, 75, 0.26);
+$formulario: rgba(238, 238, 238, 0.82);
+
+// $bs-green: #1F7A4B;
+// $navbar-text-color: #ffffff;
+// $header-bg-color: #5F7D95;
+
+$primary-text: #fff;
+$secondary-text: #D3F6C4;
+$success-text: #fff;
+$info-text: #fff;
+$warning-text: #3D3D3D;
+$danger-text: #fff;
+$light-text: #3D3D3D;
+$dark-text: #fff;
+
+$theme-colors: (
+  "primary":    $principal,
+  "secondary":  $secundario,
+  "success":    $acierto,
+  "info":       $informacion,
+  "warning":    $advertencia,
+  "danger":     $peligro,
+  "light":      $blanco,
+  "dark":       $negro,
+  "terciary":   $terciario,
+  "cuaternary": $cuaternario,
+  "form":       $formulario
+);
+
+@import "./node_modules/bootstrap/scss/bootstrap.scss";
+
+.btn-primary {
+    color: $primary-text;
+}
+.btn-secondary {
+    color: $secondary-text;
+}
+.btn-success{
+    color: $success-text;
+}
+.btn-info{
+    color: $info-text;
+}
+.btn-warning{
+    color: $warning-text;
+}
+.btn-danger{
+    color: $danger-text;
+}
+.btn-light{
+    color: $light-text;
+}
+.btn-dark{
+    color: $dark-text;
+}
+.navbar .nav-link {
+    color: $primary-text;
+    font-size: 18px;
+}
+.navbar .nav-link:hover {
+    color: $light-text;
+    font-size: 18px;
+}
+
+.navbar {
+    background-color: $principal; 
+}
+
+.nav-link.active{
+    font-weight: bold;
+}
+
+.previe-header{
+    background-color: $terciario;
+    padding: 10px;
+}
+.carousel-image-size{
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+}
+
+.carousel-caption p{
+    font-size: 30px
+}
+.carousel-caption{
+    transform: translateY(-30%);
+}
