@@ -12,7 +12,8 @@ async function fetchWithToken(url, options = {}) {
 
     if (response.status === 401) {
         const refreshToken = localStorage.getItem("refreshToken");
-        const refreshResponse = await fetch("http://10.19.60.237:3000/api/usuario/refresh-token", {
+        //const refreshResponse = await fetch("http://10.19.60.237:3000/api/usuario/refresh-token", {
+        const refreshResponse = await fetch("http://localhost:3000/api/usuario/refresh-token", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ refreshToken })
@@ -43,7 +44,8 @@ async function fetchWithToken(url, options = {}) {
 }
 
 document.addEventListener('DOMContentLoaded', async () => {
-    const apiUrl = 'http://10.19.60.237:3000/api/admin/solicitudes';
+    //const apiUrl = 'http://10.19.60.237:3000/api/admin/solicitudes';
+    const apiUrl = 'http://localhost:3000/api/admin/solicitudes';
     const tbody = document.getElementById('tbody-content');
     const selectAllCheckbox = document.getElementById('selectAllRequests');
     const acceptButton = document.getElementById('acceptButton');
@@ -101,7 +103,8 @@ document.addEventListener('DOMContentLoaded', async () => {
             // Documento celda
             const documentoCell = document.createElement('td');
             const documentoLink = document.createElement('a');
-            documentoLink.href = `http://10.19.60.237:3000/Solicitudes/${item.documento_solicitado}`;
+            //documentoLink.href = `http://10.19.60.237:3000/Solicitudes/${item.documento_solicitado}`;
+            documentoLink.href = `http://localhost:3000/Solicitudes/${item.documento_solicitado}`;
             documentoLink.textContent = item.documento_solicitado;
             documentoLink.target = '_blank'; // Abre el enlace en una nueva pestaña
             documentoCell.appendChild(documentoLink);
@@ -110,7 +113,8 @@ document.addEventListener('DOMContentLoaded', async () => {
             // Archivo celda
             const archivoCell = document.createElement('td');
             const archivoLink = document.createElement('a');
-            archivoLink.href = `http://10.19.60.237:3000/Solicitudes/${item.archivo_adicional}`;
+            //archivoLink.href = `http://10.19.60.237:3000/Solicitudes/${item.archivo_adicional}`;
+            archivoLink.href = `http://localhost:3000/Solicitudes/${item.archivo_adicional}`;
             archivoLink.textContent = item.archivo_adicional;
             archivoLink.target = '_blank'; // Abre el enlace en una nueva pestaña
             archivoCell.appendChild(archivoLink);

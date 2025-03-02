@@ -12,7 +12,8 @@ async function fetchWithToken(url, options = {}) {
 
     if (response.status === 401) {
         const refreshToken = localStorage.getItem("refreshToken");
-        const refreshResponse = await fetch("http://10.19.60.237:3000/api/usuario/refresh-token", {
+        //const refreshResponse = await fetch("http://10.19.60.237:3000/api/usuario/refresh-token", {
+        const refreshResponse = await fetch("http://localhost:3000/api/usuario/refresh-token", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ refreshToken })
@@ -107,7 +108,8 @@ function toggleAddToComiteButton() {
 // Cargar empleados para asignar roles
 async function loadEmployees() {
     try {
-        const response = await fetch('http://10.19.60.237:3000/api/empleado/empleados');
+        //const response = await fetch('http://10.19.60.237:3000/api/empleado/empleados');
+        const response = await fetch('http://localhost/api/empleado/empleados');
         const empleados = await response.json();
         const selectUser = document.getElementById('selectUser');
 
@@ -126,7 +128,8 @@ async function loadEmployees() {
 // Cargar roles
 async function loadRoles() {
     try {
-        const response = await fetchWithToken('http://10.19.60.237:3000/api/rol/roles',{
+        //const response = await fetchWithToken('http://10.19.60.237:3000/api/rol/roles',{
+        const response = await fetchWithToken('http://localhost:3000/api/rol/roles',{
             method: 'GET',
         });
         const roles = await response.json();
@@ -157,7 +160,8 @@ async function assignRoleToUser() {
     }
 
     try {
-        const response = await fetchWithToken(`http://10.19.60.237:3000/api/admin/assign-role/${userId}/${roleId}`, {
+        //const response = await fetchWithToken(`http://10.19.60.237:3000/api/admin/assign-role/${userId}/${roleId}`, {
+        const response = await fetchWithToken(`http://localhost/api/admin/assign-role/${userId}/${roleId}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -177,7 +181,8 @@ async function assignRoleToUser() {
 // Cargar empleados para asignar a departamentos
 async function loadEmployeesForComite() {
     try {
-        const response = await fetch('http://10.19.60.237:3000/api/empleado/empleados');
+        //const response = await fetch('http://10.19.60.237:3000/api/empleado/empleados');
+        const response = await fetch('http://localhost:3000/api/empleado/empleados');
         const empleados = await response.json();
         const selectEmpleado = document.getElementById('selectEmpleado');
 
@@ -195,7 +200,8 @@ async function loadEmployeesForComite() {
 // Cargar departamentos
 async function loadDepartments() {
     try {
-        const response = await fetchWithToken('http://10.19.60.237:3000/api/departamento/departamentos',{
+        //const response = await fetchWithToken('http://10.19.60.237:3000/api/departamento/departamentos',{
+        const response = await fetchWithToken('http://localhost:3000/api/departamento/departamentos',{
             method: 'GET',
         });
         const departamentos = await response.json();
@@ -228,7 +234,8 @@ async function addToComite() {
     }
 
     try {
-        const response = await fetchWithToken('http://10.19.60.237:3000/api/empleado/add-empleado-al-comite', {
+        //const response = await fetchWithToken('http://10.19.60.237:3000/api/empleado/add-empleado-al-comite', {
+        const response = await fetchWithToken('http://localhost:3000/api/empleado/add-empleado-al-comite', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json'},
             body: JSON.stringify({ userId, departamentoId, puesto })

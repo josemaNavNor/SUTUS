@@ -1,6 +1,7 @@
 
 document.addEventListener('DOMContentLoaded', async () => {
-    const apiUrl = 'http://10.19.60.237:3000/api/empleado/empleados';
+    //const apiUrl = 'http://10.19.60.237:3000/api/empleado/empleados';
+    const apiUrl = 'http://localhost:3000/api/empleado/empleados';
     const tbody = document.getElementById('employeeTableBody');
 
     if (!tbody) {

@@ -1,7 +1,8 @@
 document.addEventListener('DOMContentLoaded', async () => {
     const userId = localStorage.getItem('id'); // Obtener el id del usuario desde el almacenamiento local
     const token = localStorage.getItem('token');
-    const apiUrl = `http://10.19.60.237:3000/api/usuario/solicitudes-usuario/${userId}`; // URL de la API
+    //const apiUrl = `http://10.19.60.237:3000/api/usuario/solicitudes-usuario/${userId}`; // URL de la API
+    const apiUrl = `http://localhost:3000/api/usuario/solicitudes-usuario/${userId}`; // URL de la API
     const tbody = document.getElementById('tbody-content'); // Referencia al tbody de la tabla
     const actualizarBtn = document.getElementById('actualizar-btn'); // Botón de actualizar solicitud
 
@@ -54,7 +55,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     
         if (response.status === 401) {
             const refreshToken = localStorage.getItem("refreshToken");
-            const refreshResponse = await fetch("http://10.19.60.237:3000/api/usuario/refresh-token", {
+            //const refreshResponse = await fetch("http://10.19.60.237:3000/api/usuario/refresh-token", {
+            const refreshResponse = await fetch("http://localhost:3000/api/usuario/refresh-token", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ refreshToken })
@@ -202,8 +204,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     try {
         //Enviar el estado y el nombre del archivo como JSON
-        
-        const updateResponse = await fetchWithToken(`http://10.19.60.237:3000/api/usuario/update-request/${solicitudId}`, {
+        //const updateResponse = await fetchWithToken(`http://10.19.60.237:3000/api/usuario/update-request/${solicitudId}`, {
+        const updateResponse = await fetchWithToken(`http://localhost:3000/api/usuario/update-request/${solicitudId}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
@@ -225,7 +227,8 @@ document.addEventListener('DOMContentLoaded', async () => {
         archivoFormData.append('archivoActual', archivoActual); // Enviar el nombre del archivo actual
         archivoFormData.append('nuevoArchivo', archivo); // Agregar el archivo al FormData
 
-        const fileResponse = await fetch('http://10.19.60.237:3000/api/file/actualizar-archivo', {
+        //const fileResponse = await fetch('http://10.19.60.237:3000/api/file/actualizar-archivo', {
+        const fileResponse = await fetch('http://localhost:3000/api/file/actualizar-archivo', {
             method: 'POST',
             body: archivoFormData,
         });
