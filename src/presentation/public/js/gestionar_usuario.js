@@ -109,7 +109,7 @@ function toggleAddToComiteButton() {
 async function loadEmployees() {
     try {
         //const response = await fetch('http://10.19.60.237:3000/api/empleado/empleados');
-        const response = await fetch('http://localhost/api/empleado/empleados');
+        const response = await fetch('http://localhost:3000/api/empleado/empleados');
         const empleados = await response.json();
         const selectUser = document.getElementById('selectUser');
 
@@ -161,7 +161,7 @@ async function assignRoleToUser() {
 
     try {
         //const response = await fetchWithToken(`http://10.19.60.237:3000/api/admin/assign-role/${userId}/${roleId}`, {
-        const response = await fetchWithToken(`http://localhost/api/admin/assign-role/${userId}/${roleId}`, {
+        const response = await fetchWithToken(`http://localhost:3000/api/admin/assign-role/${userId}/${roleId}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
