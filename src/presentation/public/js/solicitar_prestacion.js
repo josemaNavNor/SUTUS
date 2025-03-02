@@ -12,7 +12,8 @@ async function fetchWithToken(url, options = {}) {
 
     if (response.status === 401) {
         const refreshToken = localStorage.getItem("refreshToken");
-        const refreshResponse = await fetch("http://10.19.60.237:3000/api/usuario/refresh-token", {
+        //const refreshResponse = await fetch("http://10.19.60.237:3000/api/usuario/refresh-token", {
+        const refreshResponse = await fetch("http://localhost:3000/api/usuario/refresh-token", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ refreshToken })
@@ -84,10 +85,12 @@ document.querySelectorAll("button.btn").forEach(button => {
             // Se manda a traer los datos desde el backend del empleado y el del tipo de solicitud con el id del boton y el id del usuario.
             //Las respuestas que traigan los enpoints se proceden a convertir en un arreglo de objeto Json para poder manipularlos facilmente.
             const [empleadoData, tipoSolicitudData] = await Promise.all([
-                fetchWithToken(`http://10.19.60.237:3000/api/empleado/get-empleado/${userId}`,{
+                //fetchWithToken(`http://10.19.60.237:3000/api/empleado/get-empleado/${userId}`,{
+                fetchWithToken(`http://localhost:3000/api/empleado/get-empleado/${userId}`,{
                 method: 'GET',      
                 }).then(res => res.json()),
-                fetchWithToken(`http://10.19.60.237:3000/api/tipo_solicitud/tipo-de-solicitud/${requestId}`,{
+                //fetchWithToken(`http://10.19.60.237:3000/api/tipo_solicitud/tipo-de-solicitud/${requestId}`,{
+                fetchWithToken(`http://localhost:3000/api/tipo_solicitud/tipo-de-solicitud/${requestId}`,{
                 method: 'GET',     
                 }).then(res => res.json())
             ]);
@@ -106,7 +109,8 @@ document.querySelectorAll("button.btn").forEach(button => {
                 throw new Error("Los datos del empleado o la solicitud no están completos.");
             }
 
-            const folioResponse = await fetchWithToken("http://10.19.60.237:3000/api/usuario/get-folio",{
+            //const folioResponse = await fetchWithToken("http://10.19.60.237:3000/api/usuario/get-folio",{
+            const folioResponse = await fetchWithToken("http://localhost:3000/api/usuario/get-folio",{
                 method: 'GET',    
             });
             const folioData = await folioResponse.json();
@@ -222,7 +226,8 @@ document.querySelectorAll("button.btn").forEach(button => {
             formData.append("pdf", new File([pdfBlob], nombrePdf, { type: "application/pdf" }));
 
             //Se envia la solicitud al backend.
-            const response = await fetchWithToken("http://10.19.60.237:3000/api/usuario/solicitud", {
+            //const response = await fetchWithToken("http://10.19.60.237:3000/api/usuario/solicitud", {
+            const response = await fetchWithToken("http://localhost:3000/api/usuario/solicitud", {
                 method: "POST",
                 body: formData
             });

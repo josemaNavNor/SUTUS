@@ -11,7 +11,8 @@ document.getElementById('uploadButton').addEventListener('click', async () => {
     formData.append('file', file);
 
     try {
-        const response = await fetch('http://192.168.1.69:3000/api/admin/upload-archivo-normatividad', {
+        //const response = await fetch('http://192.168.1.69:3000/api/admin/upload-archivo-normatividad', {
+        const response = await fetch('http://localhost:3000/api/admin/upload-archivo-normatividad', {
             method: 'POST',
             body: formData,
         });        

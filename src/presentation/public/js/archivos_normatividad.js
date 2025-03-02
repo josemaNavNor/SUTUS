@@ -12,7 +12,8 @@ async function fetchWithToken(url, options = {}) {
 
     if (response.status === 401) {
         const refreshToken = localStorage.getItem("refreshToken");
-        const refreshResponse = await fetch("http://10.19.60.237:3000/api/usuario/refresh-token", {
+        //const refreshResponse = await fetch("http://10.19.60.237:3000/api/usuario/refresh-token", {
+        const refreshResponse = await fetch("http://localhost:3000/api/usuario/refresh-token", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ refreshToken })
@@ -55,7 +56,8 @@ document.getElementById('uploadButton').addEventListener('click', async () => {
     formData.append('file', file);
 
     try {
-        const response = await fetchWithToken('http://10.19.60.237:3000/api/admin/upload-archivo-normatividad', {
+        //const response = await fetchWithToken('http://10.19.60.237:3000/api/admin/upload-archivo-normatividad', {
+        const response = await fetchWithToken('http://localhost:3000/api/admin/upload-archivo-normatividad', {
             method: 'POST',
             body: formData,
         });        

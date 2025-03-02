@@ -21,7 +21,8 @@ export async function fetchWithToken(url, options = {}) {
 
     if (response.status === 401) { // Token expirado
         const refreshToken = localStorage.getItem("refreshToken");
-        const refreshResponse = await fetch("http://10.19.60.237:3000/api/usuario/refresh-token", {
+        //const refreshResponse = await fetch("http://10.19.60.237:3000/api/usuario/refresh-token", {
+        const refreshResponse = await fetch("http://localhost:3000/api/usuario/refresh-token", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ refreshToken })
