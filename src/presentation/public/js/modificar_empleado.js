@@ -104,13 +104,13 @@ document.addEventListener('DOMContentLoaded', async () => {
                 document.getElementById('domicilioTrabajador').value = data.domicilio;
                 document.getElementById('domicilioEmpresa').value = data.domicilio_empresa;
                 document.getElementById('correo').value = data.correo;
-                document.getElementById('contrasena').value = data.contraseña;
+                //document.getElementById('contrasena').value = data.contraseña;
                 document.getElementById('fechaIngresoEmpresa').value = data.fecha_ingreso_empresa;
                 document.getElementById('fechaIngresoSindicato').value = data.fecha_ingreso_sindicato;
                 document.getElementById('dependientes').value = data.dependientes;
                 document.getElementById('fechaNacimiento').value = data.fecha_nacimiento;
                 document.getElementById('puesto').value = data.puesto;
-                document.getElementById('nivelTabular').value = data.nivel_tabular;
+                document.getElementById('nivelTabular').value = data.nivelTabular;
                 document.getElementById('dedicacion').value = data.dedicacion;
             } catch (error) {
                 console.error('Error al cargar los datos del empleado:', error);
