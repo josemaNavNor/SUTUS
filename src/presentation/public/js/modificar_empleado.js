@@ -1,4 +1,4 @@
-/* Solución provicional*/
+/* Solución provisional */
 
 async function fetchWithToken(url, options = {}) {
     let token = localStorage.getItem("token");
@@ -13,7 +13,6 @@ async function fetchWithToken(url, options = {}) {
 
     if (response.status === 401) {
         const refreshToken = localStorage.getItem("refreshToken");
-        //const refreshResponse = await fetch("http://10.19.60.237:3000/api/usuario/refresh-token", {
         const refreshResponse = await fetch("http://localhost:3000/api/usuario/refresh-token", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -46,10 +45,10 @@ async function fetchWithToken(url, options = {}) {
 
 document.addEventListener('DOMContentLoaded', async () => {
     const token = localStorage.getItem('token');
-    //const apiUrl = 'http://10.19.60.237:3000/api/empleado/empleados';
     const apiUrl = 'http://localhost:3000/api/empleado/empleados';
     const dropDown = document.getElementById('selectUser');
     const employeeForm = document.getElementById('employeeForm');
+    const loadingIndicator = document.getElementById('loadingIndicator'); // Agrega un indicador de carga en tu HTML
 
     if (!dropDown) {
         console.error('El elemento dropDown no existe en el DOM');
@@ -80,7 +79,45 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
     } catch (error) {
         console.error('Error al cargar los empleados:', error);
+        alert('Ocurrió un error al cargar los empleados. Por favor, inténtalo de nuevo más tarde.');
+    } finally {
+        // Ocultar indicador de carga
+        //loadingIndicator.style.display = 'none';
     }
+
+    // Manejar el cambio de selección en el dropdown
+    dropDown.addEventListener('change', async () => {
+        const id = dropDown.value;
+        if (id && id !== "Seleccione un empleado") {
+            try {
+                const response = await fetchWithToken(`http://localhost:3000/api/empleado/get-empleado/${id}`);
+                if (!response.ok) {
+                    throw new Error('Error al obtener los datos del empleado');
+                }
+
+                const data = await response.json();
+                document.getElementById('nombre').value = data.nombre;
+                document.getElementById('primerApellido').value = data.primer_apellido;
+                document.getElementById('segundoApellido').value = data.segundo_apellido;
+                document.getElementById('curp').value = data.curp;
+                document.getElementById('empresa').value = data.entidad;
+                document.getElementById('domicilioTrabajador').value = data.domicilio;
+                document.getElementById('domicilioEmpresa').value = data.domicilio_empresa;
+                document.getElementById('correo').value = data.correo;
+                document.getElementById('contrasena').value = data.contraseña;
+                document.getElementById('fechaIngresoEmpresa').value = data.fecha_ingreso_empresa;
+                document.getElementById('fechaIngresoSindicato').value = data.fecha_ingreso_sindicato;
+                document.getElementById('dependientes').value = data.dependientes;
+                document.getElementById('fechaNacimiento').value = data.fecha_nacimiento;
+                document.getElementById('puesto').value = data.puesto;
+                document.getElementById('nivelTabular').value = data.nivel_tabular;
+                document.getElementById('dedicacion').value = data.dedicacion;
+            } catch (error) {
+                console.error('Error al cargar los datos del empleado:', error);
+                alert('Ocurrió un error al cargar los datos del empleado. Por favor, inténtalo de nuevo más tarde.');
+            }
+        }
+    });
 
     // Manejar el envío del formulario
     employeeForm.addEventListener('submit', async (e) => {
@@ -112,7 +149,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
 
         try {
-            //const response = await fetchWithToken(`http://10.19.60.237:3000/api/empleado/update-empleado/${selectedEmpleadoId}`, {
             const response = await fetchWithToken(`http://localhost:3000/api/empleado/update-empleado/${selectedEmpleadoId}`, {
                 method: 'PUT',
                 headers: {
@@ -121,7 +157,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 body: JSON.stringify(filteredValues),
             });
 
-            const result = await response.json();
+            const result = await response.json();t
             if (response.ok) {
                 alert('Datos del empleado actualizados correctamente.');
                 location.reload(); // Recargar la página para reflejar los cambios
@@ -139,5 +175,3 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     });
 });
-
-

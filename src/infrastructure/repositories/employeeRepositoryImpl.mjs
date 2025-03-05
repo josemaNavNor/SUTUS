@@ -50,25 +50,25 @@ class employeeRepositoryImpl extends EmployeeRepository{
         }
     }
 
-    async getEmployeeById(id){
+    async getEmployeeById(id) {
+        if (!id) {
+            return Promise.reject(new Error("El ID del empleado es requerido"));
+        }
+    
         try {
-            const query = `SELECT * FROM empleado WHERE idempleado = ? LIMIT 1`;
+            const query = `SELECT * FROM empleado WHERE idempleado = ?`;
             const [rows] = await pool.execute(query, [id]);
-        //   const [results] = await pool.query(
-        //     `SELECT idempleado, nombre, primer_apellido, segundo_apellido, curp, fecha_nacimiento, puesto
-        //        FROM empleado
-        //        WHERE usuario = ?`,
-        //     [id]
-        //   );
-          if (rows.length === 0) {
-            throw new Error("Empleado no encontrado");
-          }
-
-          return rows;
+    
+            if (!rows.length) {
+                return Promise.reject(new Error(`Empleado con ID ${id} no encontrado`));
+            }
+    
+            return rows[0]; // Retorna el primer empleado encontrado en lugar de un array
         } catch (error) {
-          throw new Error(`Error al buscar el empleado${id}: ${error.message}`);
+            return Promise.reject(new Error(`Error al buscar el empleado ${id}: ${error.message}`));
         }
     }
+    
 
     async update(id, updateData) {
         try {
