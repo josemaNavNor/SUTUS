@@ -1,5 +1,5 @@
-class ManageEmployee{
-    constructor(userRepository, employeeRepository, hashService, usernameGeneratorService){
+class ManageEmployee {
+    constructor(userRepository, employeeRepository, hashService, usernameGeneratorService) {
         this.userRepository = userRepository;
         this.employeeRepository = employeeRepository;
         this.hashService = hashService;
@@ -7,8 +7,7 @@ class ManageEmployee{
     }
 
     //Función para crear un empleado
-    async createEmployee(employeeData){
-
+    async createEmployee(employeeData) {
         const hashedPassword = await this.hashService.hashing(employeeData.password);
 
         const employee = await this.employeeRepository.create({
@@ -27,7 +26,7 @@ class ManageEmployee{
             dependientes: employeeData.dependientes,
             fecha_nacimiento: employeeData.fecha_nacimiento,
             puesto: employeeData.puesto,
-            nivel_tabular: employeeData.nivel_tabular,
+            nivelTabular: employeeData.nivelTabular, 
             dedicacion: employeeData.dedicacion,
         });
 
@@ -44,22 +43,21 @@ class ManageEmployee{
         if (!userId) {
             throw new Error('Error al crear el usuario. No se generó un ID.');
         }
-        
-        return{
+
+        return {
             mensaje: userId.message
         };
     }
-    //Función para buscar a todos los empleados
-    async findAllEmployees(token){
-        const employees = await this.employeeRepository.getAllEmployees(token);
 
+    //Función para buscar a todos los empleados
+    async findAllEmployees(token) {
+        const employees = await this.employeeRepository.getAllEmployees(token);
         return employees;
     }
 
     //Función para buscar un empleado
-    async findEmployee(id){
+    async findEmployee(id) {
         const employee = await this.employeeRepository.getEmployeeById(id);
-
         return employee;
     }
 
@@ -68,52 +66,51 @@ class ManageEmployee{
             const newHashedPassword = await this.hashService.hashing(datosActualizados.contraseña);
             datosActualizados.contraseña = newHashedPassword;
         }
-        
+
         const updatedEmployee = await this.employeeRepository.update(id, datosActualizados);
-    
+
         if (!updatedEmployee) {
             throw new Error("Error al actualizar el usuario");
         }
-    
+
         return {
             mensaje: updatedEmployee.message,
         };
     }
-    
 
-    async generateNewPass(id, password){
+    async generateNewPass(id, password) {
         const newsHashPassword = await this.hashService.hashing(password);
         const updateUser = await this.employeeRepository.updatePass(id, newsHashPassword);
         return updateUser;
     }
 
-    async generateNewEmail(id, email){
+    async generateNewEmail(id, email) {
         const updateUser = await this.employeeRepository.updateEmail(id, email);
         return updateUser;
     }
 
-    async deleteEmployee(id){
-        const deletedUser = await this.employeeRepository.delete(id)
+    async deleteEmployee(id) {
+        const deletedUser = await this.employeeRepository.delete(id);
 
         if (!deletedUser) {
             throw new Error("Error al eliminar el usuario");
         }
 
-        return{
+        return {
             mensaje: deletedUser.message,
-        }
+        };
     }
 
-    async addEmployeeatCommittee(userId, departamentoId, puesto){
-        const adduser = await this.employeeRepository.addEmployeeCommittee(userId, departamentoId, puesto)
+    async addEmployeeatCommittee(userId, departamentoId, puesto) {
+        const adduser = await this.employeeRepository.addEmployeeCommittee(userId, departamentoId, puesto);
 
         if (!adduser) {
             throw new Error("Error al agregar el empleado al comite");
         }
 
-        return{
+        return {
             mensaje: adduser.message,
-        }
+        };
     }
 }
 

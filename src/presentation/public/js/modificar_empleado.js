@@ -157,7 +157,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 body: JSON.stringify(filteredValues),
             });
 
-            const result = await response.json();t
+            const result = await response.json();
             if (response.ok) {
                 alert('Datos del empleado actualizados correctamente.');
                 location.reload(); // Recargar la página para reflejar los cambios

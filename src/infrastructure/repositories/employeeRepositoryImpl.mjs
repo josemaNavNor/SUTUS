@@ -7,7 +7,7 @@ class employeeRepositoryImpl extends EmployeeRepository{
         try {
             const[result] = await pool.query(
                 'INSERT INTO empleado(nombre, primer_apellido, segundo_apellido, curp, entidad, domicilio, domicilio_empresa, correo, contraseña, fecha_ingreso_empresa, fecha_ingreso_sindicato, estado, dependientes, fecha_nacimiento, puesto, nivelTabular, dedicacion) VALUES (?, ?, ?, ?, ? , ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
-                [employee.nombre, employee.primer_apellido, employee.segundo_apellido, employee.curp, employee.entidad, employee.domicilio, employee.domicilio_empresa, employee.correo, employee.contraseña, employee.fecha_ingreso_empresa, employee.fecha_ingreso_sindicato, employee.estado, employee.dependientes, employee.fecha_nacimiento, employee.puesto, employee.nivel_tabular, employee.dedicacion]
+                [employee.nombre, employee.primer_apellido, employee.segundo_apellido, employee.curp, employee.entidad, employee.domicilio, employee.domicilio_empresa, employee.correo, employee.contraseña, employee.fecha_ingreso_empresa, employee.fecha_ingreso_sindicato, employee.estado, employee.dependientes, employee.fecha_nacimiento, employee.puesto, employee.nivelTabular, employee.dedicacion]
             );
         return{
             id: result.insertId
