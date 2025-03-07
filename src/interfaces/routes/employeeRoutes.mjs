@@ -19,7 +19,7 @@ router.post('/add-empleado-al-comite', isTokenCorrect, verifyRole(['administrado
 });
 
 router.get('/empleados', (req, res) => employeeController.listAllEmployeess(req, res));
-
+// probando rama develop
 router.get('/get-empleado/:id', isTokenCorrect, verifyRole(['administrador', 'usuario']), (req, res) => employeeController.listEmployee(req, res));
 router.put('/update-empleado/:id', isTokenCorrect, verifyRole(['administrador']), validateUpdateDataEmployee, (req, res) => employeeController.update(req, res));
 router.delete('/delete-empleado/:id', isTokenCorrect, verifyRole(['administrador']), (req, res) => employeeController.delete(req, res));
