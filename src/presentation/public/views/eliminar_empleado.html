@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eliminar Empleado</title>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/componentes.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="Row">
+            <div class="col-12 d-flex align-items-center justify-content-start ps-3">
+                <a href="/views/panel_de_control.html" class="text-decoration-none">
+                  <img src="/img/icons-flecha-volver.png"
+                    class="rotate-180" alt="flecha_volver">
+                </a>
+              </div>
+        </div>
+      </div>
+    <div class="container mt-5">
+        <h1>Eliminar Empleado</h1>
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped" id="employeeTable">
+                <thead class="table-primary">
+                    <tr>
+                        <th scope="col" class="text-center align-middle">Nombre</th>
+                        <th scope="col" class="text-center align-middle">Primer Apellido</th>
+                        <th scope="col" class="text-center align-middle">Segundo Apellido</th>
+                        <th scope="col" class="text-center align-middle">CURP</th>
+                        <th scope="col" class="text-center align-middle">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="employeeTableBody">
+                    <!-- Las filas de empleados se llenarán aquí -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="/js/eliminar_empleado.js"></script>
+</body>
+</html>

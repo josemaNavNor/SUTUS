@@ -188,3 +188,17 @@ footer{
 .rotate-180 {
     transform: rotate(180deg);
   }
+
+  .table-primary {
+    background-color: #1F7A4B;
+    color: white;
+}
+
+.table th, .table td {
+    vertical-align: middle;
+    text-align: center;
+}
+
+.table-responsive {
+    margin-top: 20px;
+}
