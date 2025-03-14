@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modificar Empleado</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/bootstrap.scss">
+    <link rel="stylesheet" href="/css/componentes.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md fluid-container">
+        <div class="container-fluid">
+            <a class="navbar-brand me-auto pb-3" href="/views/home.html">
+                <img src="/img/SUTUS20.png" alt="LogoSutus" width="150" height="90">
+            </a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto d-flex flex-wrap justify-content-md-center">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/views/home.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="/views/quienes_somos.html">¿Quienes somos?</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">Organización</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item menuRedondoP" href="/views/comite_ejecutivo.html">Comité
+                                    ejecutivo</a></li>
+                            <li><a class="dropdown-item menuRedondoU" href="#">Comité de vigilancia, honor y
+                                    justicia</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">Normatividad</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item menuRedondoP"
+                                    href="/views/contrato_colectivo_de_trabajo.html">Contrato
+                                    colectivo del trabajo</a></li>
+                            <li><a class="dropdown-item" href="#">Ley federal del trabajo</a></li>
+                            <li><a class="dropdown-item" href="#">Estatuto del sindicato</a></li>
+                            <li><a class="dropdown-item menuRedondoU" href="#">Código de ética</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">Documentos</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item menuRedondoP" href="/views/padronAgremiados.html">Padrón de
+                                    agremiados</a></li>
+                            <li><a class="dropdown-item" href="/views/convocatorias.html">Convocatorias</a>
+                            </li>
+                            <li><a class="dropdown-item menuRedondoU" href="/views/formatos.html">Formatos</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/views/servicios.html">Servicios</a>
+                    </li>
+                    <li class="nav-item" id="adminPanel">
+                        <a class="nav-link" href="/views/panel_de_control.html">Panel de control</a>
+                    </li>
+                    <li class="nav-item" id="solicitudes">
+                        <a class="nav-link" href="/views/actualizar_solicitud.html">Mis solicitudes</a>
+                    </li>
+                    <li class="nav-item" id="solicitudes">
+                        <a class="nav-link" href="/views/miPerfil.html">Mi Perfil</a>
+                    </li>
+                </ul>
+            </div>
+            <button id="logoutButton" class="btn btn-danger" type="button">Cerrar Sesión</button>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <div class="container mt-5">
+            <div class="col-12 d-flex align-items-center justify-content-between pt-4 pb-4">
+                <h1 class="fs-3 fs-md-1">Mi perfil</h1>
+            </div>
+            <hr class="lineaSeccCont ms-7">
+            <div id="employeeForm" class="row g-3">
+                <div class="col-md-6">
+                    <input type="image" src="" alt="">
+                    <p id="nombre"></p>
+                </div>
+                <div class="col-md-6">
+                    <label for="nombre" class="form-label"><strong>Nombre</strong></label>
+                    <p id="nombre"></p>
+                </div>
+                <div class="col-md-6">
+                    <label for="primerApellido" class="form-label"><strong>Primer Apellido</strong></label>
+                    <p id="primerApellido"></p>
+                </div>
+                <div class="col-md-6">
+                    <label for="segundoApellido" class="form-label"><strong>Segundo Apellido</strong></label>
+                    <p id="segundoApellido"></p>
+                </div>
+                <div class="col-md-6">
+                    <label for="domicilioTrabajador" class="form-label"><strong>Domicilio</strong></label>
+                    <p id="domicilioTrabajador"></p>
+                </div>
+                <div class="col-md-6">
+                    <label for="correo" class="form-label"><strong>Correo</strong></label>
+                    <p id="correo"></p>
+                </div>
+                <div class="col-md-6">
+                    <label for="fechaNacimiento" class="form-label"><strong>Fecha de Nacimiento</strong></label>
+                    <p id="fechaNacimiento"></p>
+                </div>
+                <button
+                    class="btn btn-primary col-md-3 d-flex align-items-center justify-content-center gap-2 fw-bold shadow-lg me-2"
+                    type="button" onclick="window.location.href='/views/modificarInformacion.html'">
+                    <i class="fa-solid fa-rotate-right"></i> Actualizar información
+                </button>
+                <button
+                    class="btn btn-danger col-md-4 d-flex align-items-center justify-content-center gap-2 fw-bold shadow-lg"
+                    type="button" onclick="window.location.href='/views/modificarCorreoYContrasena.html'">
+                    <i class="fa-solid fa-rotate-right"></i> Actualizar mi correo y contraseña
+                </button>
+
+            </div>
+            <script src="/js/bootstrap.bundle.js"></script>
+            <script src="/js/obtenerEmpleado.js"></script>
+            <script src="/js/bootstrap.bundle.js"></script>
+            <script src="/js/autenticacion.js"></script>
+            <script src="/js/botones.js"></script>
+            <script src="/js/administrar_solicitudes.js"></script>
+</body>
+
+</html>

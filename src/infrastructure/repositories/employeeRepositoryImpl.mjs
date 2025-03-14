@@ -93,6 +93,7 @@ class employeeRepositoryImpl extends EmployeeRepository{
             }
     
             // Actualizar la tabla usuario si se proporciona correo o contraseña
+            /*
             if (updateData.correo) {
                 await pool.execute(`UPDATE usuario SET correo = ? WHERE idusuario = ?`, [updateData.correo, id]);
             }
@@ -100,6 +101,7 @@ class employeeRepositoryImpl extends EmployeeRepository{
             if (updateData.contraseña) {
                 await pool.execute(`UPDATE usuario SET contraseña = ? WHERE idusuario = ?`, [updateData.contraseña, id]);
             }
+            */
     
             // Actualizar el estado en la tabla usuario si se proporciona
             if (updateData.estado) {

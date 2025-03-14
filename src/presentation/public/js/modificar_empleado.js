@@ -44,11 +44,11 @@ async function fetchWithToken(url, options = {}) {
 }
 
 document.addEventListener('DOMContentLoaded', async () => {
-    const token = localStorage.getItem('token');
+    //const token = localStorage.getItem('token');
     const apiUrl = 'http://localhost:3000/api/empleado/empleados';
     const dropDown = document.getElementById('selectUser');
     const employeeForm = document.getElementById('employeeForm');
-    const loadingIndicator = document.getElementById('loadingIndicator'); // Agrega un indicador de carga en tu HTML
+    //const loadingIndicator = document.getElementById('loadingIndicator'); // Agrega un indicador de carga en tu HTML
 
     if (!dropDown) {
         console.error('El elemento dropDown no existe en el DOM');
