@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modificar Empleado</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/bootstrap.scss">
+    <link rel="stylesheet" href="/css/componentes.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="Row">
+            <div class="col-12 d-flex align-items-center justify-content-start ps-3">
+                <a href="/views/miPerfil.html" class="text-decoration-none">
+                  <img src="/img/icons-flecha-volver.png"
+                    class="rotate-180" alt="flecha_volver">
+                </a>
+              </div>
+        </div>
+      </div>
+    <div class="container mt-5">
+        <div class="col-12 d-flex align-items-center justify-content-between pt-4 pb-4">
+            <h1 class="fs-3 fs-md-1">Modifica tu información</h1>
+        </div>
+        <hr class="lineaSeccCont ms-3">
+        <form id="employeeForm" class="row g-3">
+            <div class="col-md-6">
+                <label for="correo" class="form-label">Correo</label>
+                <input type="text" class="form-control" id="correo" name="correo">
+            </div>
+            <div class="col-md-6">
+                <label for="contrasena" class="form-label">Contraseña</label>
+                <input type="password" class="form-control" id="contrasena" name="contrasena">
+            </div>
+            <div class="col-12">
+                <button type="submit" class="btn btn-primary">Modificar mi informacion</button>
+            </div>
+        </form>
+    </div>    
+    <script src="/js/bootstrap.bundle.js"></script>
+    <script src="/js/modificarCorreoYContrasena.js"></script>
+</body>
+</html>
